@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1776949325523
+current_stage: None
+description: null
+last_updated_timestamp: 1776949325523
+name: PastCast-RandomForest-Rain
+run_id: cf93e1b0c286426292d0719ce5bd5822
+run_link: null
+source: file:///Users/reesepallath/Documents/PastCast_Backups/pastcast-Main/backend/ml/mlruns/555476071907066457/cf93e1b0c286426292d0719ce5bd5822/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///Users/reesepallath/Documents/PastCast_Backups/pastcast-Main/backend/ml/mlruns/555476071907066457/cf93e1b0c286426292d0719ce5bd5822/artifacts/model
+user_id: null
+version: 1

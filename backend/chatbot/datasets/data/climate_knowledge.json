@@ -1,0 +1,182 @@
+[
+  {
+    "id": "ck_0001",
+    "title": "Indian Monsoon Mechanism",
+    "content": "The Indian Summer Monsoon (ISM) is driven by the differential heating between the Indian landmass and the Indian Ocean. From June to September, the Intertropical Convergence Zone (ITCZ) shifts northward, drawing moisture-laden winds from the Arabian Sea and Bay of Bengal. The Western Ghats receive 2000-5000mm annually on the windward side. The monsoon contributes 70-80% of India's annual rainfall. Key factors include the Somali Jet, Tibetan Plateau heating, and Indian Ocean Dipole (IOD).",
+    "category": "monsoon",
+    "region": "South Asia",
+    "domain": "weather_knowledge",
+    "chunk_type": "document"
+  },
+  {
+    "id": "ck_0002",
+    "title": "Heat Index Calculation",
+    "content": "The Heat Index (HI) is calculated using Rothfusz regression: HI = -42.379 + 2.04901523T + 10.14333127R - 0.22475541TR - 6.83783e-3T\u00b2 - 5.481717e-2R\u00b2 + 1.22874e-3T\u00b2R + 8.5282e-4TR\u00b2 - 1.99e-6T\u00b2R\u00b2, where T is temperature (\u00b0F) and R is relative humidity (%). Above 105\u00b0F HI, heat exhaustion is likely. Above 130\u00b0F, heat stroke is imminent. The NWS issues Heat Advisories at 105\u00b0F and Excessive Heat Warnings at 110\u00b0F.",
+    "category": "temperature",
+    "region": "global",
+    "domain": "weather_knowledge",
+    "chunk_type": "document"
+  },
+  {
+    "id": "ck_0003",
+    "title": "Beaufort Wind Scale Details",
+    "content": "The Beaufort Scale: Force 0 (Calm, <1 km/h, smoke rises vertically), Force 3 (Gentle breeze, 12-19 km/h, leaves move), Force 6 (Strong breeze, 39-49 km/h, umbrellas difficult), Force 8 (Gale, 62-74 km/h, twigs break), Force 10 (Storm, 89-102 km/h, trees uprooted), Force 12 (Hurricane, >118 km/h, devastating damage). Maritime Beaufort also describes sea state from glassy calm to phenomenal waves >14m.",
+    "category": "wind",
+    "region": "global",
+    "domain": "weather_knowledge",
+    "chunk_type": "document"
+  },
+  {
+    "id": "ck_0004",
+    "title": "Cloud Classification System",
+    "content": "Clouds are classified by altitude: High clouds (6-12 km): Cirrus, Cirrostratus, Cirrocumulus \u2014 made of ice crystals. Middle clouds (2-6 km): Altostratus, Altocumulus \u2014 mixed water/ice. Low clouds (0-2 km): Stratus, Stratocumulus, Nimbostratus \u2014 water droplets. Vertical development: Cumulus (fair weather) and Cumulonimbus (thunderstorm, can extend from 500m to 15 km). Luke Howard's 1803 classification system remains the foundation.",
+    "category": "clouds",
+    "region": "global",
+    "domain": "weather_knowledge",
+    "chunk_type": "document"
+  },
+  {
+    "id": "ck_0005",
+    "title": "Tropical Cyclone Categories",
+    "content": "The Saffir-Simpson Hurricane Wind Scale: Category 1 (119-153 km/h, minimal damage), Category 2 (154-177 km/h, moderate damage), Category 3 (178-208 km/h, devastating), Category 4 (209-251 km/h, catastrophic), Category 5 (>252 km/h, total destruction). The scale only addresses wind speed, not storm surge, rainfall, or tornadoes. The Joint Typhoon Warning Center uses the same scale for typhoons in the Western Pacific.",
+    "category": "storms",
+    "region": "global",
+    "domain": "weather_knowledge",
+    "chunk_type": "document"
+  },
+  {
+    "id": "ck_0006",
+    "title": "Weather Station Instruments",
+    "content": "A standard weather station includes: Thermometer (mercury or digital, accuracy \u00b10.1\u00b0C), Barometer (measures atmospheric pressure in hPa/mb, standard sea-level 1013.25 hPa), Hygrometer (relative humidity, 0-100%), Anemometer (wind speed, cup or ultrasonic type), Wind Vane (direction in degrees, 0\u00b0=N, 90\u00b0=E), Rain Gauge (tipping bucket, resolution 0.2mm), Pyranometer (solar radiation), and Ceilometer (cloud base height). Data is transmitted every 1-10 minutes.",
+    "category": "instruments",
+    "region": "global",
+    "domain": "weather_knowledge",
+    "chunk_type": "document"
+  },
+  {
+    "id": "ck_0007",
+    "title": "El Ni\u00f1o Southern Oscillation",
+    "content": "ENSO is a coupled ocean-atmosphere phenomenon in the Pacific. El Ni\u00f1o: warm SST anomalies (>0.5\u00b0C) in Ni\u00f1o 3.4 region (5\u00b0N-5\u00b0S, 120\u00b0-170\u00b0W) for 5+ consecutive months. Effects: reduced Indian monsoon, Australian drought, increased East Pacific hurricanes, warmer global temps. La Ni\u00f1a: cold anomalies (<-0.5\u00b0C), opposite effects. ENSO cycle is 2-7 years. The Southern Oscillation Index (SOI) measures the pressure difference between Tahiti and Darwin.",
+    "category": "climate",
+    "region": "global",
+    "domain": "weather_knowledge",
+    "chunk_type": "document"
+  },
+  {
+    "id": "ck_0008",
+    "title": "Atmospheric Pressure Systems",
+    "content": "High pressure (anticyclone): air descends, warms, inhibits cloud formation \u2192 clear skies, light winds. Surface pressure >1013.25 hPa. Clockwise rotation (NH), counterclockwise (SH). Low pressure (cyclone/depression): air rises, cools, condenses \u2192 clouds, rain, strong winds. Surface pressure <1013.25 hPa. Counterclockwise (NH), clockwise (SH). Pressure gradient force drives wind from high to low. Coriolis effect deflects wind right (NH) and left (SH).",
+    "category": "pressure",
+    "region": "global",
+    "domain": "weather_knowledge",
+    "chunk_type": "document"
+  },
+  {
+    "id": "ck_0009",
+    "title": "Dew Point and Humidity",
+    "content": "Dew point is the temperature at which air becomes saturated and water vapor condenses. Dew point spread (temperature minus dew point) indicates moisture: <3\u00b0C means fog/clouds likely, >15\u00b0C means very dry air. Relative humidity = (actual vapor pressure / saturation vapor pressure) \u00d7 100%. RH varies with temperature even if moisture is constant. Absolute humidity (g/m\u00b3) is a better measure of actual moisture content. Comfortable dew point: <15\u00b0C. Oppressive: >20\u00b0C.",
+    "category": "humidity",
+    "region": "global",
+    "domain": "weather_knowledge",
+    "chunk_type": "document"
+  },
+  {
+    "id": "ck_0010",
+    "title": "Rainfall Measurement Standards",
+    "content": "Rainfall is measured in millimeters (mm) or inches. Standard rain gauge has a 200mm diameter collecting funnel. Light rain: 0.1-2.5 mm/hr. Moderate: 2.5-7.5 mm/hr. Heavy: 7.5-50 mm/hr. Very heavy: 50-100 mm/hr. Extreme: >100 mm/hr. Mawsynram (India) holds the record for highest average annual rainfall: 11,871 mm. Atacama Desert (Chile) is driest: <1 mm/year. Global average annual precipitation is ~1000 mm.",
+    "category": "rain",
+    "region": "global",
+    "domain": "weather_knowledge",
+    "chunk_type": "document"
+  },
+  {
+    "id": "ck_0011",
+    "title": "Weather Forecasting Methods",
+    "content": "Numerical Weather Prediction (NWP) uses mathematical equations governing atmospheric physics. Major models: GFS (USA, 28km resolution), ECMWF/IFS (Europe, 9km, most accurate), UKMO (UK), GEM (Canada). Ensemble forecasting runs models multiple times with slightly different initial conditions to assess uncertainty. Nowcasting (0-6 hours) uses radar extrapolation. Medium-range (3-7 days) uses NWP. Extended range (>7 days) uses statistical-dynamical methods.",
+    "category": "forecast",
+    "region": "global",
+    "domain": "weather_knowledge",
+    "chunk_type": "document"
+  },
+  {
+    "id": "ck_0012",
+    "title": "Urban Heat Island Effect",
+    "content": "Urban areas are 1-3\u00b0C warmer than rural surroundings (up to 12\u00b0C at night). Causes: dark surfaces (asphalt/concrete albedo 0.05-0.20 vs grass 0.25), reduced evapotranspiration, anthropogenic heat (buildings, vehicles, industry), canyon geometry trapping radiation, reduced wind. Mitigation: green roofs, urban forests, cool pavements (high-albedo surfaces), water features. UHI intensifies heat waves and increases energy demand for cooling by 5-10%.",
+    "category": "climate",
+    "region": "global",
+    "domain": "weather_knowledge",
+    "chunk_type": "document"
+  },
+  {
+    "id": "ck_0013",
+    "title": "Visibility and Fog Types",
+    "content": "Visibility is the greatest distance at which objects can be identified. Standard atmosphere visibility: 10+ km. Fog: <1 km. Mist: 1-2 km. Haze: 2-5 km. Types of fog: Radiation fog (clear nights, calm winds, cooling ground), Advection fog (warm air over cold surface, e.g., San Francisco), Upslope fog (air forced up terrain), Steam fog (cold air over warm water), Freezing fog (supercooled droplets freeze on contact). Dense fog advisory: visibility <0.4 km.",
+    "category": "visibility",
+    "region": "global",
+    "domain": "weather_knowledge",
+    "chunk_type": "document"
+  },
+  {
+    "id": "ck_0014",
+    "title": "Indian Regional Climate Zones",
+    "content": "India has diverse climate zones: Tropical Wet (Kerala, >3000mm rain), Tropical Monsoon (Mumbai, distinct wet/dry), Semi-Arid (Rajasthan, <500mm), Arid (Thar Desert, <250mm), Subtropical Humid (Delhi, hot summers/cool winters), Mountain (Himalayas, altitude-dependent). Mumbai avg temp: 24-33\u00b0C. Delhi: 4-45\u00b0C. Bengaluru: 15-35\u00b0C. Chennai: 24-38\u00b0C. The Western Ghats create a dramatic rain shadow affecting the Deccan Plateau.",
+    "category": "climate",
+    "region": "South Asia",
+    "domain": "weather_knowledge",
+    "chunk_type": "document"
+  },
+  {
+    "id": "ck_0015",
+    "title": "Thunderstorm Life Cycle",
+    "content": "Three stages: 1) Developing (cumulus) stage: warm updrafts dominate, cloud grows vertically, lasts 15-20 min, no precipitation. 2) Mature stage: updrafts and downdrafts coexist, rain/hail falls, maximum intensity, lightning frequent, possible tornadoes, lasts 15-30 min. 3) Dissipating stage: downdrafts dominate, cutting off warm air supply, precipitation weakens, cloud anvil spreads, lasts 30+ min. Supercell thunderstorms can maintain the mature stage for hours via a mesocyclone.",
+    "category": "storms",
+    "region": "global",
+    "domain": "weather_knowledge",
+    "chunk_type": "document"
+  },
+  {
+    "id": "ck_0016",
+    "title": "UV Index and Solar Radiation",
+    "content": "UV Index scale: 1-2 (Low, minimal protection), 3-5 (Moderate, seek shade midday), 6-7 (High, reduce exposure 10am-4pm), 8-10 (Very High, avoid outdoors midday), 11+ (Extreme, unprotected skin burns in minutes). UV-B causes sunburn. UV-A causes aging. Factors: solar angle, altitude (+10% per 1000m), cloud cover (thin clouds block only 20%), ozone layer, surface reflection (snow 80%, sand 15%, water 10%). SPF 30 blocks 97% of UV-B.",
+    "category": "safety",
+    "region": "global",
+    "domain": "weather_knowledge",
+    "chunk_type": "document"
+  },
+  {
+    "id": "ck_0017",
+    "title": "Air Quality Index",
+    "content": "AQI measures pollutant concentrations: PM2.5, PM10, O3, NO2, SO2, CO. Scale: 0-50 (Good, green), 51-100 (Moderate, yellow), 101-150 (Unhealthy for Sensitive Groups, orange), 151-200 (Unhealthy, red), 201-300 (Very Unhealthy, purple), 301-500 (Hazardous, maroon). Delhi winter AQI regularly exceeds 400 due to crop burning, vehicle emissions, and temperature inversions trapping pollutants near the surface.",
+    "category": "safety",
+    "region": "global",
+    "domain": "weather_knowledge",
+    "chunk_type": "document"
+  },
+  {
+    "id": "ck_0018",
+    "title": "Precipitation Types",
+    "content": "Rain: liquid water droplets >0.5mm. Drizzle: <0.5mm drops. Snow: ice crystals, forms at cloud temperatures <0\u00b0C with saturated air. Sleet: raindrops that freeze while falling through a cold layer. Freezing rain: supercooled drops that freeze on contact with cold surfaces (most dangerous \u2014 creates ice glazing). Hail: layered ice balls formed in strong updrafts of cumulonimbus clouds, can exceed 15cm diameter. Graupel: soft hail/snow pellets, 2-5mm.",
+    "category": "rain",
+    "region": "global",
+    "domain": "weather_knowledge",
+    "chunk_type": "document"
+  },
+  {
+    "id": "ck_0019",
+    "title": "Sea Surface Temperature Impact",
+    "content": "SST drives global weather patterns. Warm SST (>26.5\u00b0C) fuels tropical cyclone formation. SST anomalies >0.5\u00b0C define El Ni\u00f1o/La Ni\u00f1a events. The Indian Ocean Dipole (IOD) \u2014 SST difference between western and eastern Indian Ocean \u2014 modulates monsoon rainfall. Positive IOD enhances Indian monsoon. SST affects evaporation rates, atmospheric moisture, and pressure gradients. Global average SST has risen ~0.8\u00b0C since 1900.",
+    "category": "climate",
+    "region": "global",
+    "domain": "weather_knowledge",
+    "chunk_type": "document"
+  },
+  {
+    "id": "ck_0020",
+    "title": "Weather Map Reading",
+    "content": "Isobars: lines of equal pressure, closely spaced = strong winds. Cold front (blue triangles): cold air displaces warm, brings showers and temperature drop. Warm front (red semicircles): warm air rises over cold, brings steady rain. Occluded front (alternating): cold front overtakes warm front. Stationary front: neither air mass advances. Trough: elongated area of low pressure. Ridge: elongated area of high pressure. Station model shows temp, dew point, wind, pressure, weather.",
+    "category": "forecast",
+    "region": "global",
+    "domain": "weather_knowledge",
+    "chunk_type": "document"
+  }
+]

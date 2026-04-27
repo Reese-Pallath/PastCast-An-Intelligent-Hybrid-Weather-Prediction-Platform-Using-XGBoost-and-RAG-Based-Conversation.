@@ -5,7 +5,7 @@ interface ComparisonData {
     location: {
       latitude: number;
       longitude: number;
-      city_name: string;
+      city_name?: string;
     };
     probabilities: any;
     data_quality: string;
@@ -42,7 +42,7 @@ const ComparisonResults: React.FC<ComparisonResultsProps> = ({ data }) => {
           </h2>
         </div>
 
-        {/* Comparison Summary */}
+        {}
         <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-xl p-6 mb-8 border border-white/10 shadow-lg animate-in fade-in-50 duration-700 hover:shadow-blue-500/20 transition-all duration-500">
           <div className="flex items-center space-x-3 mb-4">
             <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-400 rounded-lg flex items-center justify-center animate-pulse">
@@ -54,7 +54,7 @@ const ComparisonResults: React.FC<ComparisonResultsProps> = ({ data }) => {
               Comparison Summary
             </h3>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <h4 className="text-green-400 font-semibold mb-3">Best Locations</h4>
@@ -67,7 +67,7 @@ const ComparisonResults: React.FC<ComparisonResultsProps> = ({ data }) => {
                 ))}
               </div>
             </div>
-            
+
             <div>
               <h4 className="text-red-400 font-semibold mb-3">Worst Locations</h4>
               <div className="space-y-2">
@@ -80,7 +80,7 @@ const ComparisonResults: React.FC<ComparisonResultsProps> = ({ data }) => {
               </div>
             </div>
           </div>
-          
+
           <div className="mt-4 p-4 bg-white/5 rounded-lg">
             <div className="flex items-center justify-between">
               <span className="text-white font-medium">Overall Risk Level:</span>
@@ -89,7 +89,7 @@ const ComparisonResults: React.FC<ComparisonResultsProps> = ({ data }) => {
           </div>
         </div>
 
-        {/* Individual Location Results */}
+        {}
         <div className="space-y-6">
           <h3 className="text-white font-semibold text-lg flex items-center space-x-2">
             <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -98,7 +98,7 @@ const ComparisonResults: React.FC<ComparisonResultsProps> = ({ data }) => {
             </svg>
             <span>Individual Location Analysis</span>
           </h3>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {locations.map((locationData, index) => (
               <div 
@@ -133,7 +133,7 @@ const ComparisonResults: React.FC<ComparisonResultsProps> = ({ data }) => {
                   </div>
                 </div>
 
-                {/* Probability Cards */}
+                {}
                 <div className="space-y-3">
                   {Object.entries(locationData.probabilities).filter(([key, value]) => 
                     key !== 'summary' && typeof value === 'object' && value !== null && 'probability' in value
@@ -166,7 +166,7 @@ const ComparisonResults: React.FC<ComparisonResultsProps> = ({ data }) => {
           </div>
         </div>
 
-        {/* Analysis Info */}
+        {}
         <div className="mt-8 p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-lg">
           <div className="flex items-center space-x-3 mb-4">
             <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-400 rounded-lg flex items-center justify-center">

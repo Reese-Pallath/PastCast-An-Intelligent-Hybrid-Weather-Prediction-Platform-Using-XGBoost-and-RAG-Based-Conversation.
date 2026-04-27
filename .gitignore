@@ -24,6 +24,7 @@ yarn-error.log*
 
 # Python virtualenvs
 backend/.venv/
+backend/venv/
 .venv/
 
 # Python caches
@@ -33,3 +34,9 @@ __pycache__/
 # Env files (secrets)
 .env
 backend/.env
+
+# Claude Code memory (local only)
+.claude/
+
+# SQLite databases (local chat history)
+*.db

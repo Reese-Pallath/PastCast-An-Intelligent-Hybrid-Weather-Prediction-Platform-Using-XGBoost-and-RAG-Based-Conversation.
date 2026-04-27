@@ -1,7 +1,3 @@
-/**
- * Chatbot Service for PastCAST-AI
- * Handles communication with the NLP/NLM-powered backend
- */
 
 export interface ChatbotMessage {
   text: string;
@@ -30,16 +26,10 @@ class ChatbotService {
   private baseUrl: string;
 
   constructor() {
-    // Use environment variable or default to localhost:8000
-    this.baseUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8000';
+
+    this.baseUrl = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8000';
   }
 
-  /**
-   * Send a message to the chatbot backend
-   * @param message User message text
-   * @param conversationHistory Optional conversation history for context
-   * @returns Promise with chatbot response
-   */
   async sendMessage(
     message: string,
     conversationHistory?: Array<{ role: 'user' | 'assistant'; content: string }>
@@ -69,11 +59,6 @@ class ChatbotService {
     }
   }
 
-  /**
-   * Send a message using the legacy chatbot endpoint
-   * @param text \text
-   * @returns Promise with chatbot response
-   */
   async sendChatbotMessage(text: string): Promise<ChatbotResponse> {
     try {
       const response = await fetch(`${this.baseUrl}/api/message`, {
@@ -100,10 +85,6 @@ class ChatbotService {
     }
   }
 
-  /**
-   * Check backend health
-   * @returns Promise with health status
-   */
   async checkHealth(): Promise<{
     status: string;
     service: string;
@@ -123,6 +104,4 @@ class ChatbotService {
   }
 }
 
-// Export singleton instance
 export const chatbotService = new ChatbotService();
-

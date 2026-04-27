@@ -52,9 +52,7 @@ export const WeatherAPIHandler = {
       throw new Error('OpenWeather API key not configured for frontend');
     }
 
-    const url = `https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(
-      query,
-    )}&limit=${limit}&appid=${OPENWEATHER_API_KEY}`;
+    const url = `https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(query)}&limit=${limit}&appid=${OPENWEATHER_API_KEY}`;
 
     const data = await fetchJson(url);
     return (data as any[]).map((item) => ({

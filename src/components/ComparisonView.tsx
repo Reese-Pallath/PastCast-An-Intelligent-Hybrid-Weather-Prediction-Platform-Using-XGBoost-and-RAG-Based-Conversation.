@@ -41,23 +41,21 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ onSubmit, isLoading }) 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Validate locations
+
     const validLocations = locations.filter(loc => 
       loc.latitude !== 0 && loc.longitude !== 0
     );
-    
+
     if (validLocations.length < 2) {
       alert('Please select at least 2 locations on the maps to compare');
       return;
     }
-    
+
     if (!startDate) {
       alert('Please select a start date');
       return;
     }
 
-    // Remove id field before submitting
     const locationsToSubmit = validLocations.map(({ id, ...loc }) => loc);
     onSubmit(locationsToSubmit, startDate, useDateRange ? endDate : undefined, datasetMode);
   };
@@ -76,9 +74,9 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ onSubmit, isLoading }) 
             Compare Weather Probabilities
           </h2>
         </div>
-      
+
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Locations */}
+        {}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <h3 className="text-white font-semibold text-lg flex items-center space-x-2">
@@ -99,7 +97,7 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ onSubmit, isLoading }) 
               <span>Add Location</span>
             </button>
           </div>
-          
+
           <div className="space-y-6">
             {locations.map((location, index) => (
               <div key={location.id} className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 shadow-lg hover:shadow-blue-500/10 transition-all duration-300">
@@ -123,7 +121,7 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ onSubmit, isLoading }) 
                     </button>
                   )}
                 </div>
-                
+
                 <LocationMap 
                   onLocationSelect={(lat, lng, address) => handleLocationSelect(index, lat, lng, address)}
                   initialLat={location.latitude || undefined}
@@ -135,7 +133,7 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ onSubmit, isLoading }) 
           </div>
         </div>
 
-        {/* Date Selection */}
+        {}
         <div className="space-y-4">
           <h3 className="text-white font-semibold text-lg flex items-center space-x-2">
             <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -154,7 +152,7 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ onSubmit, isLoading }) 
           </div>
         </div>
 
-        {/* Date Range Toggle */}
+        {}
         <div className="flex items-center space-x-4 p-4 bg-white/5 rounded-xl border border-white/10">
           <input
             type="checkbox"
@@ -168,7 +166,7 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ onSubmit, isLoading }) 
           </label>
         </div>
 
-        {/* End Date */}
+        {}
         {useDateRange && (
           <div className="space-y-2">
             <label className="block text-white text-sm font-medium">End Date</label>
@@ -181,7 +179,7 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ onSubmit, isLoading }) 
           </div>
         )}
 
-        {/* Dataset Source */}
+        {}
         <div className="space-y-4">
           <h3 className="text-white font-semibold text-lg flex items-center space-x-2">
             <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -208,7 +206,7 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ onSubmit, isLoading }) 
           <p className="text-white/60 text-sm">IMD focuses on India; Global uses NASA/NOAA; Combined merges when available.</p>
         </div>
 
-        {/* Submit Button */}
+        {}
         <button
           type="submit"
           disabled={isLoading}
@@ -216,11 +214,11 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ onSubmit, isLoading }) 
             isLoading ? 'animate-pulse' : ''
           }`}
         >
-          {/* Animated background */}
+          {}
           {isLoading && (
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
           )}
-          
+
           {isLoading ? (
             <>
               <div className="relative z-10 w-6 h-6 border-3 border-white border-t-transparent rounded-full animate-spin"></div>
@@ -238,7 +236,7 @@ const ComparisonView: React.FC<ComparisonViewProps> = ({ onSubmit, isLoading }) 
         </button>
       </form>
 
-      {/* Info Section */}
+      {}
       <div className="mt-8 p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-lg">
         <div className="flex items-center space-x-3 mb-4">
           <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-400 rounded-lg flex items-center justify-center">

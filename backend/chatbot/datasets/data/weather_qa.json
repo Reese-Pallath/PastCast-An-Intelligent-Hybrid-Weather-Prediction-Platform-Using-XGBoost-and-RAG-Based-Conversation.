@@ -1,0 +1,1410 @@
+[
+  {
+    "id": "wqa_0001",
+    "question": "What is a weather forecast?",
+    "answer": "A weather forecast is a prediction of atmospheric conditions for a specific location and time period, based on meteorological data analysis.",
+    "category": "forecast",
+    "domain": "weather",
+    "confidence": 0.97
+  },
+  {
+    "id": "wqa_0002",
+    "question": "Please describe a weather forecast?",
+    "answer": "A weather forecast is a prediction of atmospheric conditions for a specific location and time period, based on meteorological data analysis.",
+    "category": "forecast",
+    "domain": "weather",
+    "confidence": 0.94
+  },
+  {
+    "id": "wqa_0003",
+    "question": "I'd like to know a weather forecast?",
+    "answer": "A weather forecast is a prediction of atmospheric conditions for a specific location and time period, based on meteorological data analysis.",
+    "category": "forecast",
+    "domain": "weather",
+    "confidence": 0.92
+  },
+  {
+    "id": "wqa_0004",
+    "question": "Can you tell me a weather forecast?",
+    "answer": "A weather forecast is a prediction of atmospheric conditions for a specific location and time period, based on meteorological data analysis.",
+    "category": "forecast",
+    "domain": "weather",
+    "confidence": 0.97
+  },
+  {
+    "id": "wqa_0005",
+    "question": "How accurate are weather forecasts?",
+    "answer": "Short-term forecasts (1-3 days) are about 80-90% accurate. Accuracy decreases with time \u2014 7-day forecasts are roughly 50-60% accurate.",
+    "category": "forecast",
+    "domain": "weather",
+    "confidence": 0.95
+  },
+  {
+    "id": "wqa_0006",
+    "question": "What exactly is how accurate are weather forecasts?",
+    "answer": "Short-term forecasts (1-3 days) are about 80-90% accurate. Accuracy decreases with time \u2014 7-day forecasts are roughly 50-60% accurate.",
+    "category": "forecast",
+    "domain": "weather",
+    "confidence": 0.88
+  },
+  {
+    "id": "wqa_0007",
+    "question": "Can you tell me how accurate are weather forecasts?",
+    "answer": "Short-term forecasts (1-3 days) are about 80-90% accurate. Accuracy decreases with time \u2014 7-day forecasts are roughly 50-60% accurate.",
+    "category": "forecast",
+    "domain": "weather",
+    "confidence": 0.95
+  },
+  {
+    "id": "wqa_0008",
+    "question": "Explain how accurate are weather forecasts?",
+    "answer": "Short-term forecasts (1-3 days) are about 80-90% accurate. Accuracy decreases with time \u2014 7-day forecasts are roughly 50-60% accurate.",
+    "category": "forecast",
+    "domain": "weather",
+    "confidence": 0.92
+  },
+  {
+    "id": "wqa_0009",
+    "question": "What is a 5-day forecast?",
+    "answer": "A 5-day forecast predicts weather conditions for the next five days using numerical weather prediction models and current atmospheric data.",
+    "category": "forecast",
+    "domain": "weather",
+    "confidence": 0.96
+  },
+  {
+    "id": "wqa_0010",
+    "question": "Help me understand a 5-day forecast?",
+    "answer": "A 5-day forecast predicts weather conditions for the next five days using numerical weather prediction models and current atmospheric data.",
+    "category": "forecast",
+    "domain": "weather",
+    "confidence": 0.89
+  },
+  {
+    "id": "wqa_0011",
+    "question": "What exactly is a 5-day forecast?",
+    "answer": "A 5-day forecast predicts weather conditions for the next five days using numerical weather prediction models and current atmospheric data.",
+    "category": "forecast",
+    "domain": "weather",
+    "confidence": 0.87
+  },
+  {
+    "id": "wqa_0012",
+    "question": "I'd like to know a 5-day forecast?",
+    "answer": "A 5-day forecast predicts weather conditions for the next five days using numerical weather prediction models and current atmospheric data.",
+    "category": "forecast",
+    "domain": "weather",
+    "confidence": 0.9
+  },
+  {
+    "id": "wqa_0013",
+    "question": "How do meteorologists predict weather?",
+    "answer": "Meteorologists use satellite imagery, radar data, weather stations, radiosondes, and numerical weather prediction (NWP) computer models to forecast weather.",
+    "category": "forecast",
+    "domain": "weather",
+    "confidence": 0.94
+  },
+  {
+    "id": "wqa_0014",
+    "question": "I'd like to know how do meteorologists predict weather?",
+    "answer": "Meteorologists use satellite imagery, radar data, weather stations, radiosondes, and numerical weather prediction (NWP) computer models to forecast weather.",
+    "category": "forecast",
+    "domain": "weather",
+    "confidence": 0.88
+  },
+  {
+    "id": "wqa_0015",
+    "question": "Help me understand how do meteorologists predict weather?",
+    "answer": "Meteorologists use satellite imagery, radar data, weather stations, radiosondes, and numerical weather prediction (NWP) computer models to forecast weather.",
+    "category": "forecast",
+    "domain": "weather",
+    "confidence": 0.88
+  },
+  {
+    "id": "wqa_0016",
+    "question": "Can you tell me how do meteorologists predict weather?",
+    "answer": "Meteorologists use satellite imagery, radar data, weather stations, radiosondes, and numerical weather prediction (NWP) computer models to forecast weather.",
+    "category": "forecast",
+    "domain": "weather",
+    "confidence": 0.86
+  },
+  {
+    "id": "wqa_0017",
+    "question": "What does precipitation probability mean?",
+    "answer": "Precipitation probability (PoP) indicates the chance that any point in the forecast area will receive measurable precipitation during the forecast period.",
+    "category": "forecast",
+    "domain": "weather",
+    "confidence": 0.9
+  },
+  {
+    "id": "wqa_0018",
+    "question": "What exactly is what does precipitation probability mean?",
+    "answer": "Precipitation probability (PoP) indicates the chance that any point in the forecast area will receive measurable precipitation during the forecast period.",
+    "category": "forecast",
+    "domain": "weather",
+    "confidence": 0.94
+  },
+  {
+    "id": "wqa_0019",
+    "question": "I'd like to know what does precipitation probability mean?",
+    "answer": "Precipitation probability (PoP) indicates the chance that any point in the forecast area will receive measurable precipitation during the forecast period.",
+    "category": "forecast",
+    "domain": "weather",
+    "confidence": 0.93
+  },
+  {
+    "id": "wqa_0020",
+    "question": "Help me understand what does precipitation probability mean?",
+    "answer": "Precipitation probability (PoP) indicates the chance that any point in the forecast area will receive measurable precipitation during the forecast period.",
+    "category": "forecast",
+    "domain": "weather",
+    "confidence": 0.97
+  },
+  {
+    "id": "wqa_0021",
+    "question": "What is feels-like temperature?",
+    "answer": "Feels-like temperature (apparent temperature) accounts for wind chill in cold weather and heat index in warm weather, representing how temperature actually feels to humans.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.94
+  },
+  {
+    "id": "wqa_0022",
+    "question": "Explain feels-like temperature?",
+    "answer": "Feels-like temperature (apparent temperature) accounts for wind chill in cold weather and heat index in warm weather, representing how temperature actually feels to humans.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.93
+  },
+  {
+    "id": "wqa_0023",
+    "question": "What exactly is feels-like temperature?",
+    "answer": "Feels-like temperature (apparent temperature) accounts for wind chill in cold weather and heat index in warm weather, representing how temperature actually feels to humans.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.96
+  },
+  {
+    "id": "wqa_0024",
+    "question": "Please describe feels-like temperature?",
+    "answer": "Feels-like temperature (apparent temperature) accounts for wind chill in cold weather and heat index in warm weather, representing how temperature actually feels to humans.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.88
+  },
+  {
+    "id": "wqa_0025",
+    "question": "What causes extreme heat?",
+    "answer": "Extreme heat is caused by high-pressure systems that trap warm air, combined with high humidity, urban heat island effects, and prolonged solar radiation.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.88
+  },
+  {
+    "id": "wqa_0026",
+    "question": "I'd like to know what causes extreme heat?",
+    "answer": "Extreme heat is caused by high-pressure systems that trap warm air, combined with high humidity, urban heat island effects, and prolonged solar radiation.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.88
+  },
+  {
+    "id": "wqa_0027",
+    "question": "Can you tell me what causes extreme heat?",
+    "answer": "Extreme heat is caused by high-pressure systems that trap warm air, combined with high humidity, urban heat island effects, and prolonged solar radiation.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.91
+  },
+  {
+    "id": "wqa_0028",
+    "question": "Help me understand what causes extreme heat?",
+    "answer": "Extreme heat is caused by high-pressure systems that trap warm air, combined with high humidity, urban heat island effects, and prolonged solar radiation.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.91
+  },
+  {
+    "id": "wqa_0029",
+    "question": "What is a heat index?",
+    "answer": "The heat index combines air temperature and relative humidity to determine the human-perceived equivalent temperature. At 90\u00b0F with 60% humidity, it feels like 100\u00b0F.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.92
+  },
+  {
+    "id": "wqa_0030",
+    "question": "Help me understand a heat index?",
+    "answer": "The heat index combines air temperature and relative humidity to determine the human-perceived equivalent temperature. At 90\u00b0F with 60% humidity, it feels like 100\u00b0F.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.91
+  },
+  {
+    "id": "wqa_0031",
+    "question": "Please describe a heat index?",
+    "answer": "The heat index combines air temperature and relative humidity to determine the human-perceived equivalent temperature. At 90\u00b0F with 60% humidity, it feels like 100\u00b0F.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.91
+  },
+  {
+    "id": "wqa_0032",
+    "question": "Explain a heat index?",
+    "answer": "The heat index combines air temperature and relative humidity to determine the human-perceived equivalent temperature. At 90\u00b0F with 60% humidity, it feels like 100\u00b0F.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.96
+  },
+  {
+    "id": "wqa_0033",
+    "question": "What is wind chill?",
+    "answer": "Wind chill is the perceived decrease in air temperature felt by the body on exposed skin due to the flow of air. Wind speeds amplify heat loss from the body.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.89
+  },
+  {
+    "id": "wqa_0034",
+    "question": "Explain wind chill?",
+    "answer": "Wind chill is the perceived decrease in air temperature felt by the body on exposed skin due to the flow of air. Wind speeds amplify heat loss from the body.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.96
+  },
+  {
+    "id": "wqa_0035",
+    "question": "Please describe wind chill?",
+    "answer": "Wind chill is the perceived decrease in air temperature felt by the body on exposed skin due to the flow of air. Wind speeds amplify heat loss from the body.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.94
+  },
+  {
+    "id": "wqa_0036",
+    "question": "I'd like to know wind chill?",
+    "answer": "Wind chill is the perceived decrease in air temperature felt by the body on exposed skin due to the flow of air. Wind speeds amplify heat loss from the body.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.89
+  },
+  {
+    "id": "wqa_0037",
+    "question": "What is a temperature inversion?",
+    "answer": "A temperature inversion occurs when a layer of warm air sits above cooler air near the surface, trapping pollutants and moisture, often causing fog.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.99
+  },
+  {
+    "id": "wqa_0038",
+    "question": "I'd like to know a temperature inversion?",
+    "answer": "A temperature inversion occurs when a layer of warm air sits above cooler air near the surface, trapping pollutants and moisture, often causing fog.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.86
+  },
+  {
+    "id": "wqa_0039",
+    "question": "Please describe a temperature inversion?",
+    "answer": "A temperature inversion occurs when a layer of warm air sits above cooler air near the surface, trapping pollutants and moisture, often causing fog.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.95
+  },
+  {
+    "id": "wqa_0040",
+    "question": "Help me understand a temperature inversion?",
+    "answer": "A temperature inversion occurs when a layer of warm air sits above cooler air near the surface, trapping pollutants and moisture, often causing fog.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.87
+  },
+  {
+    "id": "wqa_0041",
+    "question": "What is the difference between Celsius and Fahrenheit?",
+    "answer": "Celsius sets water freezing at 0\u00b0 and boiling at 100\u00b0. Fahrenheit sets freezing at 32\u00b0 and boiling at 212\u00b0. Convert: \u00b0F = \u00b0C \u00d7 9/5 + 32.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.99
+  },
+  {
+    "id": "wqa_0042",
+    "question": "Can you tell me the difference between celsius and fahrenheit?",
+    "answer": "Celsius sets water freezing at 0\u00b0 and boiling at 100\u00b0. Fahrenheit sets freezing at 32\u00b0 and boiling at 212\u00b0. Convert: \u00b0F = \u00b0C \u00d7 9/5 + 32.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.92
+  },
+  {
+    "id": "wqa_0043",
+    "question": "Help me understand the difference between celsius and fahrenheit?",
+    "answer": "Celsius sets water freezing at 0\u00b0 and boiling at 100\u00b0. Fahrenheit sets freezing at 32\u00b0 and boiling at 212\u00b0. Convert: \u00b0F = \u00b0C \u00d7 9/5 + 32.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.9
+  },
+  {
+    "id": "wqa_0044",
+    "question": "I'd like to know the difference between celsius and fahrenheit?",
+    "answer": "Celsius sets water freezing at 0\u00b0 and boiling at 100\u00b0. Fahrenheit sets freezing at 32\u00b0 and boiling at 212\u00b0. Convert: \u00b0F = \u00b0C \u00d7 9/5 + 32.",
+    "category": "temperature",
+    "domain": "weather",
+    "confidence": 0.86
+  },
+  {
+    "id": "wqa_0045",
+    "question": "What causes rain?",
+    "answer": "Rain forms when water vapor in the atmosphere condenses into water droplets around condensation nuclei. When droplets grow heavy enough, they fall as precipitation.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.97
+  },
+  {
+    "id": "wqa_0046",
+    "question": "Please describe what causes rain?",
+    "answer": "Rain forms when water vapor in the atmosphere condenses into water droplets around condensation nuclei. When droplets grow heavy enough, they fall as precipitation.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.86
+  },
+  {
+    "id": "wqa_0047",
+    "question": "I'd like to know what causes rain?",
+    "answer": "Rain forms when water vapor in the atmosphere condenses into water droplets around condensation nuclei. When droplets grow heavy enough, they fall as precipitation.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.89
+  },
+  {
+    "id": "wqa_0048",
+    "question": "What exactly is what causes rain?",
+    "answer": "Rain forms when water vapor in the atmosphere condenses into water droplets around condensation nuclei. When droplets grow heavy enough, they fall as precipitation.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.87
+  },
+  {
+    "id": "wqa_0049",
+    "question": "What is the monsoon?",
+    "answer": "The monsoon is a seasonal wind pattern that brings heavy rainfall. The Indian monsoon (June-September) is caused by differential heating between land and ocean.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.97
+  },
+  {
+    "id": "wqa_0050",
+    "question": "Can you tell me the monsoon?",
+    "answer": "The monsoon is a seasonal wind pattern that brings heavy rainfall. The Indian monsoon (June-September) is caused by differential heating between land and ocean.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.87
+  },
+  {
+    "id": "wqa_0051",
+    "question": "Explain the monsoon?",
+    "answer": "The monsoon is a seasonal wind pattern that brings heavy rainfall. The Indian monsoon (June-September) is caused by differential heating between land and ocean.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.95
+  },
+  {
+    "id": "wqa_0052",
+    "question": "Please describe the monsoon?",
+    "answer": "The monsoon is a seasonal wind pattern that brings heavy rainfall. The Indian monsoon (June-September) is caused by differential heating between land and ocean.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.97
+  },
+  {
+    "id": "wqa_0053",
+    "question": "What is orographic rainfall?",
+    "answer": "Orographic rainfall occurs when moist air is forced upward by mountains. As air rises, it cools and condenses, producing precipitation on the windward side.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.93
+  },
+  {
+    "id": "wqa_0054",
+    "question": "I'd like to know orographic rainfall?",
+    "answer": "Orographic rainfall occurs when moist air is forced upward by mountains. As air rises, it cools and condenses, producing precipitation on the windward side.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.87
+  },
+  {
+    "id": "wqa_0055",
+    "question": "Please describe orographic rainfall?",
+    "answer": "Orographic rainfall occurs when moist air is forced upward by mountains. As air rises, it cools and condenses, producing precipitation on the windward side.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.93
+  },
+  {
+    "id": "wqa_0056",
+    "question": "Help me understand orographic rainfall?",
+    "answer": "Orographic rainfall occurs when moist air is forced upward by mountains. As air rises, it cools and condenses, producing precipitation on the windward side.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.97
+  },
+  {
+    "id": "wqa_0057",
+    "question": "What is convective rainfall?",
+    "answer": "Convective rainfall occurs when the sun heats the ground, causing warm air to rise rapidly. The rising air cools, condenses, and forms cumulonimbus clouds with heavy rain.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.98
+  },
+  {
+    "id": "wqa_0058",
+    "question": "Can you tell me convective rainfall?",
+    "answer": "Convective rainfall occurs when the sun heats the ground, causing warm air to rise rapidly. The rising air cools, condenses, and forms cumulonimbus clouds with heavy rain.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.95
+  },
+  {
+    "id": "wqa_0059",
+    "question": "Explain convective rainfall?",
+    "answer": "Convective rainfall occurs when the sun heats the ground, causing warm air to rise rapidly. The rising air cools, condenses, and forms cumulonimbus clouds with heavy rain.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.96
+  },
+  {
+    "id": "wqa_0060",
+    "question": "What exactly is convective rainfall?",
+    "answer": "Convective rainfall occurs when the sun heats the ground, causing warm air to rise rapidly. The rising air cools, condenses, and forms cumulonimbus clouds with heavy rain.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.89
+  },
+  {
+    "id": "wqa_0061",
+    "question": "What's the difference between drizzle and rain?",
+    "answer": "Drizzle consists of very small water droplets (< 0.5mm) falling slowly. Rain has larger droplets (> 0.5mm). Light rain is 0.1-2.5mm/hr, heavy rain exceeds 7.6mm/hr.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.91
+  },
+  {
+    "id": "wqa_0062",
+    "question": "Please describe what's the difference between drizzle and rain?",
+    "answer": "Drizzle consists of very small water droplets (< 0.5mm) falling slowly. Rain has larger droplets (> 0.5mm). Light rain is 0.1-2.5mm/hr, heavy rain exceeds 7.6mm/hr.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.89
+  },
+  {
+    "id": "wqa_0063",
+    "question": "Can you tell me what's the difference between drizzle and rain?",
+    "answer": "Drizzle consists of very small water droplets (< 0.5mm) falling slowly. Rain has larger droplets (> 0.5mm). Light rain is 0.1-2.5mm/hr, heavy rain exceeds 7.6mm/hr.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.92
+  },
+  {
+    "id": "wqa_0064",
+    "question": "What exactly is what's the difference between drizzle and rain?",
+    "answer": "Drizzle consists of very small water droplets (< 0.5mm) falling slowly. Rain has larger droplets (> 0.5mm). Light rain is 0.1-2.5mm/hr, heavy rain exceeds 7.6mm/hr.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.96
+  },
+  {
+    "id": "wqa_0065",
+    "question": "What is a rain shadow?",
+    "answer": "A rain shadow is a dry area on the leeward side of a mountain. Moist air rises on the windward side, drops precipitation, then descends as dry air on the other side.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.98
+  },
+  {
+    "id": "wqa_0066",
+    "question": "Explain a rain shadow?",
+    "answer": "A rain shadow is a dry area on the leeward side of a mountain. Moist air rises on the windward side, drops precipitation, then descends as dry air on the other side.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.95
+  },
+  {
+    "id": "wqa_0067",
+    "question": "What exactly is a rain shadow?",
+    "answer": "A rain shadow is a dry area on the leeward side of a mountain. Moist air rises on the windward side, drops precipitation, then descends as dry air on the other side.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.87
+  },
+  {
+    "id": "wqa_0068",
+    "question": "Please describe a rain shadow?",
+    "answer": "A rain shadow is a dry area on the leeward side of a mountain. Moist air rises on the windward side, drops precipitation, then descends as dry air on the other side.",
+    "category": "rain",
+    "domain": "weather",
+    "confidence": 0.87
+  },
+  {
+    "id": "wqa_0069",
+    "question": "What causes wind?",
+    "answer": "Wind is caused by differences in atmospheric pressure. Air flows from high-pressure areas to low-pressure areas. The greater the pressure difference, the stronger the wind.",
+    "category": "wind",
+    "domain": "weather",
+    "confidence": 0.96
+  },
+  {
+    "id": "wqa_0070",
+    "question": "Please describe what causes wind?",
+    "answer": "Wind is caused by differences in atmospheric pressure. Air flows from high-pressure areas to low-pressure areas. The greater the pressure difference, the stronger the wind.",
+    "category": "wind",
+    "domain": "weather",
+    "confidence": 0.97
+  },
+  {
+    "id": "wqa_0071",
+    "question": "Can you tell me what causes wind?",
+    "answer": "Wind is caused by differences in atmospheric pressure. Air flows from high-pressure areas to low-pressure areas. The greater the pressure difference, the stronger the wind.",
+    "category": "wind",
+    "domain": "weather",
+    "confidence": 0.97
+  },
+  {
+    "id": "wqa_0072",
+    "question": "I'd like to know what causes wind?",
+    "answer": "Wind is caused by differences in atmospheric pressure. Air flows from high-pressure areas to low-pressure areas. The greater the pressure difference, the stronger the wind.",
+    "category": "wind",
+    "domain": "weather",
+    "confidence": 0.86
+  },
+  {
+    "id": "wqa_0073",
+    "question": "What is the Beaufort scale?",
+    "answer": "The Beaufort scale measures wind speed from 0 (calm, <1 km/h) to 12 (hurricane, >118 km/h). Force 7+ is gale-force winds. It was developed by Sir Francis Beaufort in 1805.",
+    "category": "wind",
+    "domain": "weather",
+    "confidence": 0.96
+  },
+  {
+    "id": "wqa_0074",
+    "question": "Please describe the beaufort scale?",
+    "answer": "The Beaufort scale measures wind speed from 0 (calm, <1 km/h) to 12 (hurricane, >118 km/h). Force 7+ is gale-force winds. It was developed by Sir Francis Beaufort in 1805.",
+    "category": "wind",
+    "domain": "weather",
+    "confidence": 0.88
+  },
+  {
+    "id": "wqa_0075",
+    "question": "What exactly is the beaufort scale?",
+    "answer": "The Beaufort scale measures wind speed from 0 (calm, <1 km/h) to 12 (hurricane, >118 km/h). Force 7+ is gale-force winds. It was developed by Sir Francis Beaufort in 1805.",
+    "category": "wind",
+    "domain": "weather",
+    "confidence": 0.87
+  },
+  {
+    "id": "wqa_0076",
+    "question": "Explain the beaufort scale?",
+    "answer": "The Beaufort scale measures wind speed from 0 (calm, <1 km/h) to 12 (hurricane, >118 km/h). Force 7+ is gale-force winds. It was developed by Sir Francis Beaufort in 1805.",
+    "category": "wind",
+    "domain": "weather",
+    "confidence": 0.86
+  },
+  {
+    "id": "wqa_0077",
+    "question": "What are trade winds?",
+    "answer": "Trade winds are persistent easterly winds that blow from subtropical high-pressure belts toward the equator. They were crucial for sailing trade routes, hence the name.",
+    "category": "wind",
+    "domain": "weather",
+    "confidence": 0.94
+  },
+  {
+    "id": "wqa_0078",
+    "question": "I'd like to know trade winds?",
+    "answer": "Trade winds are persistent easterly winds that blow from subtropical high-pressure belts toward the equator. They were crucial for sailing trade routes, hence the name.",
+    "category": "wind",
+    "domain": "weather",
+    "confidence": 0.92
+  },
+  {
+    "id": "wqa_0079",
+    "question": "What exactly is trade winds?",
+    "answer": "Trade winds are persistent easterly winds that blow from subtropical high-pressure belts toward the equator. They were crucial for sailing trade routes, hence the name.",
+    "category": "wind",
+    "domain": "weather",
+    "confidence": 0.93
+  },
+  {
+    "id": "wqa_0080",
+    "question": "Can you tell me trade winds?",
+    "answer": "Trade winds are persistent easterly winds that blow from subtropical high-pressure belts toward the equator. They were crucial for sailing trade routes, hence the name.",
+    "category": "wind",
+    "domain": "weather",
+    "confidence": 0.85
+  },
+  {
+    "id": "wqa_0081",
+    "question": "What is a jet stream?",
+    "answer": "Jet streams are narrow bands of strong wind at 9-12 km altitude, flowing west to east at 160-320 km/h. They influence weather patterns and storm tracks.",
+    "category": "wind",
+    "domain": "weather",
+    "confidence": 0.95
+  },
+  {
+    "id": "wqa_0082",
+    "question": "Help me understand a jet stream?",
+    "answer": "Jet streams are narrow bands of strong wind at 9-12 km altitude, flowing west to east at 160-320 km/h. They influence weather patterns and storm tracks.",
+    "category": "wind",
+    "domain": "weather",
+    "confidence": 0.92
+  },
+  {
+    "id": "wqa_0083",
+    "question": "I'd like to know a jet stream?",
+    "answer": "Jet streams are narrow bands of strong wind at 9-12 km altitude, flowing west to east at 160-320 km/h. They influence weather patterns and storm tracks.",
+    "category": "wind",
+    "domain": "weather",
+    "confidence": 0.87
+  },
+  {
+    "id": "wqa_0084",
+    "question": "What exactly is a jet stream?",
+    "answer": "Jet streams are narrow bands of strong wind at 9-12 km altitude, flowing west to east at 160-320 km/h. They influence weather patterns and storm tracks.",
+    "category": "wind",
+    "domain": "weather",
+    "confidence": 0.96
+  },
+  {
+    "id": "wqa_0085",
+    "question": "What causes sea breeze?",
+    "answer": "Sea breezes occur because land heats faster than water during the day. Warm air over land rises, drawing cooler marine air inland, creating an onshore breeze.",
+    "category": "wind",
+    "domain": "weather",
+    "confidence": 0.88
+  },
+  {
+    "id": "wqa_0086",
+    "question": "Explain what causes sea breeze?",
+    "answer": "Sea breezes occur because land heats faster than water during the day. Warm air over land rises, drawing cooler marine air inland, creating an onshore breeze.",
+    "category": "wind",
+    "domain": "weather",
+    "confidence": 0.88
+  },
+  {
+    "id": "wqa_0087",
+    "question": "Can you tell me what causes sea breeze?",
+    "answer": "Sea breezes occur because land heats faster than water during the day. Warm air over land rises, drawing cooler marine air inland, creating an onshore breeze.",
+    "category": "wind",
+    "domain": "weather",
+    "confidence": 0.94
+  },
+  {
+    "id": "wqa_0088",
+    "question": "I'd like to know what causes sea breeze?",
+    "answer": "Sea breezes occur because land heats faster than water during the day. Warm air over land rises, drawing cooler marine air inland, creating an onshore breeze.",
+    "category": "wind",
+    "domain": "weather",
+    "confidence": 0.87
+  },
+  {
+    "id": "wqa_0089",
+    "question": "What are the main cloud types?",
+    "answer": "The main cloud types are: Cirrus (high, wispy), Cumulus (puffy), Stratus (layered), and Cumulonimbus (thunderstorm). They're classified by altitude and shape.",
+    "category": "clouds",
+    "domain": "weather",
+    "confidence": 0.94
+  },
+  {
+    "id": "wqa_0090",
+    "question": "Can you tell me the main cloud types?",
+    "answer": "The main cloud types are: Cirrus (high, wispy), Cumulus (puffy), Stratus (layered), and Cumulonimbus (thunderstorm). They're classified by altitude and shape.",
+    "category": "clouds",
+    "domain": "weather",
+    "confidence": 0.94
+  },
+  {
+    "id": "wqa_0091",
+    "question": "Explain the main cloud types?",
+    "answer": "The main cloud types are: Cirrus (high, wispy), Cumulus (puffy), Stratus (layered), and Cumulonimbus (thunderstorm). They're classified by altitude and shape.",
+    "category": "clouds",
+    "domain": "weather",
+    "confidence": 0.95
+  },
+  {
+    "id": "wqa_0092",
+    "question": "I'd like to know the main cloud types?",
+    "answer": "The main cloud types are: Cirrus (high, wispy), Cumulus (puffy), Stratus (layered), and Cumulonimbus (thunderstorm). They're classified by altitude and shape.",
+    "category": "clouds",
+    "domain": "weather",
+    "confidence": 0.93
+  },
+  {
+    "id": "wqa_0093",
+    "question": "What do dark clouds mean?",
+    "answer": "Dark clouds indicate high water content and thickness. Nimbostratus (dark, layered) brings steady rain. Cumulonimbus (dark, towering) brings thunderstorms with heavy rain.",
+    "category": "clouds",
+    "domain": "weather",
+    "confidence": 0.96
+  },
+  {
+    "id": "wqa_0094",
+    "question": "Help me understand what do dark clouds mean?",
+    "answer": "Dark clouds indicate high water content and thickness. Nimbostratus (dark, layered) brings steady rain. Cumulonimbus (dark, towering) brings thunderstorms with heavy rain.",
+    "category": "clouds",
+    "domain": "weather",
+    "confidence": 0.85
+  },
+  {
+    "id": "wqa_0095",
+    "question": "Can you tell me what do dark clouds mean?",
+    "answer": "Dark clouds indicate high water content and thickness. Nimbostratus (dark, layered) brings steady rain. Cumulonimbus (dark, towering) brings thunderstorms with heavy rain.",
+    "category": "clouds",
+    "domain": "weather",
+    "confidence": 0.97
+  },
+  {
+    "id": "wqa_0096",
+    "question": "Explain what do dark clouds mean?",
+    "answer": "Dark clouds indicate high water content and thickness. Nimbostratus (dark, layered) brings steady rain. Cumulonimbus (dark, towering) brings thunderstorms with heavy rain.",
+    "category": "clouds",
+    "domain": "weather",
+    "confidence": 0.86
+  },
+  {
+    "id": "wqa_0097",
+    "question": "How do clouds form?",
+    "answer": "Clouds form when warm, moist air rises and cools to its dew point. Water vapor condenses around tiny particles (condensation nuclei) to form visible water droplets or ice crystals.",
+    "category": "clouds",
+    "domain": "weather",
+    "confidence": 0.92
+  },
+  {
+    "id": "wqa_0098",
+    "question": "Can you tell me how do clouds form?",
+    "answer": "Clouds form when warm, moist air rises and cools to its dew point. Water vapor condenses around tiny particles (condensation nuclei) to form visible water droplets or ice crystals.",
+    "category": "clouds",
+    "domain": "weather",
+    "confidence": 0.87
+  },
+  {
+    "id": "wqa_0099",
+    "question": "I'd like to know how do clouds form?",
+    "answer": "Clouds form when warm, moist air rises and cools to its dew point. Water vapor condenses around tiny particles (condensation nuclei) to form visible water droplets or ice crystals.",
+    "category": "clouds",
+    "domain": "weather",
+    "confidence": 0.9
+  },
+  {
+    "id": "wqa_0100",
+    "question": "Help me understand how do clouds form?",
+    "answer": "Clouds form when warm, moist air rises and cools to its dew point. Water vapor condenses around tiny particles (condensation nuclei) to form visible water droplets or ice crystals.",
+    "category": "clouds",
+    "domain": "weather",
+    "confidence": 0.94
+  },
+  {
+    "id": "wqa_0101",
+    "question": "What is cloud cover percentage?",
+    "answer": "Cloud cover is measured in oktas (eighths of sky) or percentage. 0% is clear sky, 25% is few clouds, 50-75% is partly to mostly cloudy, 100% is overcast.",
+    "category": "clouds",
+    "domain": "weather",
+    "confidence": 0.99
+  },
+  {
+    "id": "wqa_0102",
+    "question": "What exactly is cloud cover percentage?",
+    "answer": "Cloud cover is measured in oktas (eighths of sky) or percentage. 0% is clear sky, 25% is few clouds, 50-75% is partly to mostly cloudy, 100% is overcast.",
+    "category": "clouds",
+    "domain": "weather",
+    "confidence": 0.94
+  },
+  {
+    "id": "wqa_0103",
+    "question": "Please describe cloud cover percentage?",
+    "answer": "Cloud cover is measured in oktas (eighths of sky) or percentage. 0% is clear sky, 25% is few clouds, 50-75% is partly to mostly cloudy, 100% is overcast.",
+    "category": "clouds",
+    "domain": "weather",
+    "confidence": 0.88
+  },
+  {
+    "id": "wqa_0104",
+    "question": "Can you tell me cloud cover percentage?",
+    "answer": "Cloud cover is measured in oktas (eighths of sky) or percentage. 0% is clear sky, 25% is few clouds, 50-75% is partly to mostly cloudy, 100% is overcast.",
+    "category": "clouds",
+    "domain": "weather",
+    "confidence": 0.95
+  },
+  {
+    "id": "wqa_0105",
+    "question": "What is a cyclone?",
+    "answer": "A cyclone is a large-scale rotating storm system with low atmospheric pressure at its center. Tropical cyclones form over warm oceans (>26.5\u00b0C) and are called hurricanes in the Atlantic.",
+    "category": "storms",
+    "domain": "weather",
+    "confidence": 0.97
+  },
+  {
+    "id": "wqa_0106",
+    "question": "Can you tell me a cyclone?",
+    "answer": "A cyclone is a large-scale rotating storm system with low atmospheric pressure at its center. Tropical cyclones form over warm oceans (>26.5\u00b0C) and are called hurricanes in the Atlantic.",
+    "category": "storms",
+    "domain": "weather",
+    "confidence": 0.93
+  },
+  {
+    "id": "wqa_0107",
+    "question": "Explain a cyclone?",
+    "answer": "A cyclone is a large-scale rotating storm system with low atmospheric pressure at its center. Tropical cyclones form over warm oceans (>26.5\u00b0C) and are called hurricanes in the Atlantic.",
+    "category": "storms",
+    "domain": "weather",
+    "confidence": 0.93
+  },
+  {
+    "id": "wqa_0108",
+    "question": "Help me understand a cyclone?",
+    "answer": "A cyclone is a large-scale rotating storm system with low atmospheric pressure at its center. Tropical cyclones form over warm oceans (>26.5\u00b0C) and are called hurricanes in the Atlantic.",
+    "category": "storms",
+    "domain": "weather",
+    "confidence": 0.96
+  },
+  {
+    "id": "wqa_0109",
+    "question": "What causes thunderstorms?",
+    "answer": "Thunderstorms require three ingredients: moisture, an unstable atmosphere, and a lifting mechanism (front, convergence, or orography). They produce lightning, thunder, and heavy rain.",
+    "category": "storms",
+    "domain": "weather",
+    "confidence": 0.93
+  },
+  {
+    "id": "wqa_0110",
+    "question": "I'd like to know what causes thunderstorms?",
+    "answer": "Thunderstorms require three ingredients: moisture, an unstable atmosphere, and a lifting mechanism (front, convergence, or orography). They produce lightning, thunder, and heavy rain.",
+    "category": "storms",
+    "domain": "weather",
+    "confidence": 0.88
+  },
+  {
+    "id": "wqa_0111",
+    "question": "Please describe what causes thunderstorms?",
+    "answer": "Thunderstorms require three ingredients: moisture, an unstable atmosphere, and a lifting mechanism (front, convergence, or orography). They produce lightning, thunder, and heavy rain.",
+    "category": "storms",
+    "domain": "weather",
+    "confidence": 0.89
+  },
+  {
+    "id": "wqa_0112",
+    "question": "Help me understand what causes thunderstorms?",
+    "answer": "Thunderstorms require three ingredients: moisture, an unstable atmosphere, and a lifting mechanism (front, convergence, or orography). They produce lightning, thunder, and heavy rain.",
+    "category": "storms",
+    "domain": "weather",
+    "confidence": 0.93
+  },
+  {
+    "id": "wqa_0113",
+    "question": "What is a tornado?",
+    "answer": "A tornado is a violently rotating column of air extending from a thunderstorm to the ground. Wind speeds can exceed 480 km/h. They form in supercell thunderstorms.",
+    "category": "storms",
+    "domain": "weather",
+    "confidence": 0.98
+  },
+  {
+    "id": "wqa_0114",
+    "question": "Help me understand a tornado?",
+    "answer": "A tornado is a violently rotating column of air extending from a thunderstorm to the ground. Wind speeds can exceed 480 km/h. They form in supercell thunderstorms.",
+    "category": "storms",
+    "domain": "weather",
+    "confidence": 0.89
+  },
+  {
+    "id": "wqa_0115",
+    "question": "What exactly is a tornado?",
+    "answer": "A tornado is a violently rotating column of air extending from a thunderstorm to the ground. Wind speeds can exceed 480 km/h. They form in supercell thunderstorms.",
+    "category": "storms",
+    "domain": "weather",
+    "confidence": 0.91
+  },
+  {
+    "id": "wqa_0116",
+    "question": "I'd like to know a tornado?",
+    "answer": "A tornado is a violently rotating column of air extending from a thunderstorm to the ground. Wind speeds can exceed 480 km/h. They form in supercell thunderstorms.",
+    "category": "storms",
+    "domain": "weather",
+    "confidence": 0.88
+  },
+  {
+    "id": "wqa_0117",
+    "question": "What is the eye of a hurricane?",
+    "answer": "The eye is the calm center of a hurricane, 30-65 km in diameter, with clear skies and light winds. The eyewall surrounding it has the strongest winds and heaviest rain.",
+    "category": "storms",
+    "domain": "weather",
+    "confidence": 0.9
+  },
+  {
+    "id": "wqa_0118",
+    "question": "What exactly is the eye of a hurricane?",
+    "answer": "The eye is the calm center of a hurricane, 30-65 km in diameter, with clear skies and light winds. The eyewall surrounding it has the strongest winds and heaviest rain.",
+    "category": "storms",
+    "domain": "weather",
+    "confidence": 0.88
+  },
+  {
+    "id": "wqa_0119",
+    "question": "Explain the eye of a hurricane?",
+    "answer": "The eye is the calm center of a hurricane, 30-65 km in diameter, with clear skies and light winds. The eyewall surrounding it has the strongest winds and heaviest rain.",
+    "category": "storms",
+    "domain": "weather",
+    "confidence": 0.97
+  },
+  {
+    "id": "wqa_0120",
+    "question": "Help me understand the eye of a hurricane?",
+    "answer": "The eye is the calm center of a hurricane, 30-65 km in diameter, with clear skies and light winds. The eyewall surrounding it has the strongest winds and heaviest rain.",
+    "category": "storms",
+    "domain": "weather",
+    "confidence": 0.94
+  },
+  {
+    "id": "wqa_0121",
+    "question": "What is a nor'easter?",
+    "answer": "A nor'easter is a macro-scale extratropical cyclone along the east coast of North America, named for its northeast winds. They bring heavy snow, rain, and coastal flooding.",
+    "category": "storms",
+    "domain": "weather",
+    "confidence": 0.99
+  },
+  {
+    "id": "wqa_0122",
+    "question": "I'd like to know a nor'easter?",
+    "answer": "A nor'easter is a macro-scale extratropical cyclone along the east coast of North America, named for its northeast winds. They bring heavy snow, rain, and coastal flooding.",
+    "category": "storms",
+    "domain": "weather",
+    "confidence": 0.95
+  },
+  {
+    "id": "wqa_0123",
+    "question": "Please describe a nor'easter?",
+    "answer": "A nor'easter is a macro-scale extratropical cyclone along the east coast of North America, named for its northeast winds. They bring heavy snow, rain, and coastal flooding.",
+    "category": "storms",
+    "domain": "weather",
+    "confidence": 0.9
+  },
+  {
+    "id": "wqa_0124",
+    "question": "Can you tell me a nor'easter?",
+    "answer": "A nor'easter is a macro-scale extratropical cyclone along the east coast of North America, named for its northeast winds. They bring heavy snow, rain, and coastal flooding.",
+    "category": "storms",
+    "domain": "weather",
+    "confidence": 0.96
+  },
+  {
+    "id": "wqa_0125",
+    "question": "What is the difference between weather and climate?",
+    "answer": "Weather is short-term atmospheric conditions (hours to days). Climate is the average of weather patterns over 30+ years. Weather is what you get; climate is what you expect.",
+    "category": "climate",
+    "domain": "weather",
+    "confidence": 0.97
+  },
+  {
+    "id": "wqa_0126",
+    "question": "Explain the difference between weather and climate?",
+    "answer": "Weather is short-term atmospheric conditions (hours to days). Climate is the average of weather patterns over 30+ years. Weather is what you get; climate is what you expect.",
+    "category": "climate",
+    "domain": "weather",
+    "confidence": 0.91
+  },
+  {
+    "id": "wqa_0127",
+    "question": "Can you tell me the difference between weather and climate?",
+    "answer": "Weather is short-term atmospheric conditions (hours to days). Climate is the average of weather patterns over 30+ years. Weather is what you get; climate is what you expect.",
+    "category": "climate",
+    "domain": "weather",
+    "confidence": 0.93
+  },
+  {
+    "id": "wqa_0128",
+    "question": "What exactly is the difference between weather and climate?",
+    "answer": "Weather is short-term atmospheric conditions (hours to days). Climate is the average of weather patterns over 30+ years. Weather is what you get; climate is what you expect.",
+    "category": "climate",
+    "domain": "weather",
+    "confidence": 0.86
+  },
+  {
+    "id": "wqa_0129",
+    "question": "What are climate zones?",
+    "answer": "Major climate zones: Tropical (warm year-round), Arid (dry), Temperate (moderate), Continental (extreme seasons), and Polar (cold). Based on the K\u00f6ppen classification system.",
+    "category": "climate",
+    "domain": "weather",
+    "confidence": 0.91
+  },
+  {
+    "id": "wqa_0130",
+    "question": "Explain climate zones?",
+    "answer": "Major climate zones: Tropical (warm year-round), Arid (dry), Temperate (moderate), Continental (extreme seasons), and Polar (cold). Based on the K\u00f6ppen classification system.",
+    "category": "climate",
+    "domain": "weather",
+    "confidence": 0.87
+  },
+  {
+    "id": "wqa_0131",
+    "question": "Help me understand climate zones?",
+    "answer": "Major climate zones: Tropical (warm year-round), Arid (dry), Temperate (moderate), Continental (extreme seasons), and Polar (cold). Based on the K\u00f6ppen classification system.",
+    "category": "climate",
+    "domain": "weather",
+    "confidence": 0.95
+  },
+  {
+    "id": "wqa_0132",
+    "question": "Please describe climate zones?",
+    "answer": "Major climate zones: Tropical (warm year-round), Arid (dry), Temperate (moderate), Continental (extreme seasons), and Polar (cold). Based on the K\u00f6ppen classification system.",
+    "category": "climate",
+    "domain": "weather",
+    "confidence": 0.97
+  },
+  {
+    "id": "wqa_0133",
+    "question": "What is El Ni\u00f1o?",
+    "answer": "El Ni\u00f1o is a periodic warming of sea surface temperatures in the central-eastern Pacific Ocean. It disrupts global weather, causing droughts in Australia and floods in South America.",
+    "category": "climate",
+    "domain": "weather",
+    "confidence": 0.95
+  },
+  {
+    "id": "wqa_0134",
+    "question": "I'd like to know el ni\u00f1o?",
+    "answer": "El Ni\u00f1o is a periodic warming of sea surface temperatures in the central-eastern Pacific Ocean. It disrupts global weather, causing droughts in Australia and floods in South America.",
+    "category": "climate",
+    "domain": "weather",
+    "confidence": 0.95
+  },
+  {
+    "id": "wqa_0135",
+    "question": "What exactly is el ni\u00f1o?",
+    "answer": "El Ni\u00f1o is a periodic warming of sea surface temperatures in the central-eastern Pacific Ocean. It disrupts global weather, causing droughts in Australia and floods in South America.",
+    "category": "climate",
+    "domain": "weather",
+    "confidence": 0.91
+  },
+  {
+    "id": "wqa_0136",
+    "question": "Can you tell me el ni\u00f1o?",
+    "answer": "El Ni\u00f1o is a periodic warming of sea surface temperatures in the central-eastern Pacific Ocean. It disrupts global weather, causing droughts in Australia and floods in South America.",
+    "category": "climate",
+    "domain": "weather",
+    "confidence": 0.92
+  },
+  {
+    "id": "wqa_0137",
+    "question": "What is La Ni\u00f1a?",
+    "answer": "La Ni\u00f1a is the cooling counterpart of El Ni\u00f1o, bringing colder-than-normal Pacific waters. It typically intensifies monsoons, increases hurricane activity, and causes droughts in South America.",
+    "category": "climate",
+    "domain": "weather",
+    "confidence": 0.94
+  },
+  {
+    "id": "wqa_0138",
+    "question": "I'd like to know la ni\u00f1a?",
+    "answer": "La Ni\u00f1a is the cooling counterpart of El Ni\u00f1o, bringing colder-than-normal Pacific waters. It typically intensifies monsoons, increases hurricane activity, and causes droughts in South America.",
+    "category": "climate",
+    "domain": "weather",
+    "confidence": 0.87
+  },
+  {
+    "id": "wqa_0139",
+    "question": "Please describe la ni\u00f1a?",
+    "answer": "La Ni\u00f1a is the cooling counterpart of El Ni\u00f1o, bringing colder-than-normal Pacific waters. It typically intensifies monsoons, increases hurricane activity, and causes droughts in South America.",
+    "category": "climate",
+    "domain": "weather",
+    "confidence": 0.91
+  },
+  {
+    "id": "wqa_0140",
+    "question": "Can you tell me la ni\u00f1a?",
+    "answer": "La Ni\u00f1a is the cooling counterpart of El Ni\u00f1o, bringing colder-than-normal Pacific waters. It typically intensifies monsoons, increases hurricane activity, and causes droughts in South America.",
+    "category": "climate",
+    "domain": "weather",
+    "confidence": 0.89
+  },
+  {
+    "id": "wqa_0141",
+    "question": "What is the urban heat island effect?",
+    "answer": "Urban areas are 1-3\u00b0C warmer than surrounding rural areas due to concrete/asphalt absorbing heat, reduced vegetation, waste heat from buildings and vehicles, and altered wind patterns.",
+    "category": "climate",
+    "domain": "weather",
+    "confidence": 0.91
+  },
+  {
+    "id": "wqa_0142",
+    "question": "Can you tell me the urban heat island effect?",
+    "answer": "Urban areas are 1-3\u00b0C warmer than surrounding rural areas due to concrete/asphalt absorbing heat, reduced vegetation, waste heat from buildings and vehicles, and altered wind patterns.",
+    "category": "climate",
+    "domain": "weather",
+    "confidence": 0.93
+  },
+  {
+    "id": "wqa_0143",
+    "question": "Please describe the urban heat island effect?",
+    "answer": "Urban areas are 1-3\u00b0C warmer than surrounding rural areas due to concrete/asphalt absorbing heat, reduced vegetation, waste heat from buildings and vehicles, and altered wind patterns.",
+    "category": "climate",
+    "domain": "weather",
+    "confidence": 0.95
+  },
+  {
+    "id": "wqa_0144",
+    "question": "I'd like to know the urban heat island effect?",
+    "answer": "Urban areas are 1-3\u00b0C warmer than surrounding rural areas due to concrete/asphalt absorbing heat, reduced vegetation, waste heat from buildings and vehicles, and altered wind patterns.",
+    "category": "climate",
+    "domain": "weather",
+    "confidence": 0.97
+  },
+  {
+    "id": "wqa_0145",
+    "question": "What is a barometer?",
+    "answer": "A barometer measures atmospheric pressure. Rising pressure indicates fair weather; falling pressure suggests approaching storms. Mercury barometers use a column of mercury; aneroid types use a sealed chamber.",
+    "category": "instruments",
+    "domain": "weather",
+    "confidence": 0.9
+  },
+  {
+    "id": "wqa_0146",
+    "question": "Explain a barometer?",
+    "answer": "A barometer measures atmospheric pressure. Rising pressure indicates fair weather; falling pressure suggests approaching storms. Mercury barometers use a column of mercury; aneroid types use a sealed chamber.",
+    "category": "instruments",
+    "domain": "weather",
+    "confidence": 0.97
+  },
+  {
+    "id": "wqa_0147",
+    "question": "Help me understand a barometer?",
+    "answer": "A barometer measures atmospheric pressure. Rising pressure indicates fair weather; falling pressure suggests approaching storms. Mercury barometers use a column of mercury; aneroid types use a sealed chamber.",
+    "category": "instruments",
+    "domain": "weather",
+    "confidence": 0.86
+  },
+  {
+    "id": "wqa_0148",
+    "question": "Please describe a barometer?",
+    "answer": "A barometer measures atmospheric pressure. Rising pressure indicates fair weather; falling pressure suggests approaching storms. Mercury barometers use a column of mercury; aneroid types use a sealed chamber.",
+    "category": "instruments",
+    "domain": "weather",
+    "confidence": 0.87
+  },
+  {
+    "id": "wqa_0149",
+    "question": "How does a weather radar work?",
+    "answer": "Weather radar sends out radio waves that bounce off precipitation. The return signal reveals location, intensity, and movement of rain, snow, and hail. Doppler radar also detects wind speed.",
+    "category": "instruments",
+    "domain": "weather",
+    "confidence": 0.94
+  },
+  {
+    "id": "wqa_0150",
+    "question": "What exactly is how does a weather radar work?",
+    "answer": "Weather radar sends out radio waves that bounce off precipitation. The return signal reveals location, intensity, and movement of rain, snow, and hail. Doppler radar also detects wind speed.",
+    "category": "instruments",
+    "domain": "weather",
+    "confidence": 0.86
+  },
+  {
+    "id": "wqa_0151",
+    "question": "Can you tell me how does a weather radar work?",
+    "answer": "Weather radar sends out radio waves that bounce off precipitation. The return signal reveals location, intensity, and movement of rain, snow, and hail. Doppler radar also detects wind speed.",
+    "category": "instruments",
+    "domain": "weather",
+    "confidence": 0.87
+  },
+  {
+    "id": "wqa_0152",
+    "question": "Please describe how does a weather radar work?",
+    "answer": "Weather radar sends out radio waves that bounce off precipitation. The return signal reveals location, intensity, and movement of rain, snow, and hail. Doppler radar also detects wind speed.",
+    "category": "instruments",
+    "domain": "weather",
+    "confidence": 0.87
+  },
+  {
+    "id": "wqa_0153",
+    "question": "What is a hygrometer?",
+    "answer": "A hygrometer measures humidity. Types include psychrometers (wet/dry bulb), capacitive sensors, and dew point hygrometers. Digital versions are common in weather stations.",
+    "category": "instruments",
+    "domain": "weather",
+    "confidence": 0.95
+  },
+  {
+    "id": "wqa_0154",
+    "question": "Please describe a hygrometer?",
+    "answer": "A hygrometer measures humidity. Types include psychrometers (wet/dry bulb), capacitive sensors, and dew point hygrometers. Digital versions are common in weather stations.",
+    "category": "instruments",
+    "domain": "weather",
+    "confidence": 0.91
+  },
+  {
+    "id": "wqa_0155",
+    "question": "I'd like to know a hygrometer?",
+    "answer": "A hygrometer measures humidity. Types include psychrometers (wet/dry bulb), capacitive sensors, and dew point hygrometers. Digital versions are common in weather stations.",
+    "category": "instruments",
+    "domain": "weather",
+    "confidence": 0.9
+  },
+  {
+    "id": "wqa_0156",
+    "question": "Explain a hygrometer?",
+    "answer": "A hygrometer measures humidity. Types include psychrometers (wet/dry bulb), capacitive sensors, and dew point hygrometers. Digital versions are common in weather stations.",
+    "category": "instruments",
+    "domain": "weather",
+    "confidence": 0.95
+  },
+  {
+    "id": "wqa_0157",
+    "question": "What instruments are in a weather station?",
+    "answer": "A weather station includes: thermometer (temperature), barometer (pressure), hygrometer (humidity), anemometer (wind speed), wind vane (direction), and rain gauge (precipitation).",
+    "category": "instruments",
+    "domain": "weather",
+    "confidence": 0.9
+  },
+  {
+    "id": "wqa_0158",
+    "question": "Can you tell me what instruments are in a weather station?",
+    "answer": "A weather station includes: thermometer (temperature), barometer (pressure), hygrometer (humidity), anemometer (wind speed), wind vane (direction), and rain gauge (precipitation).",
+    "category": "instruments",
+    "domain": "weather",
+    "confidence": 0.91
+  },
+  {
+    "id": "wqa_0159",
+    "question": "What exactly is what instruments are in a weather station?",
+    "answer": "A weather station includes: thermometer (temperature), barometer (pressure), hygrometer (humidity), anemometer (wind speed), wind vane (direction), and rain gauge (precipitation).",
+    "category": "instruments",
+    "domain": "weather",
+    "confidence": 0.87
+  },
+  {
+    "id": "wqa_0160",
+    "question": "Help me understand what instruments are in a weather station?",
+    "answer": "A weather station includes: thermometer (temperature), barometer (pressure), hygrometer (humidity), anemometer (wind speed), wind vane (direction), and rain gauge (precipitation).",
+    "category": "instruments",
+    "domain": "weather",
+    "confidence": 0.86
+  },
+  {
+    "id": "wqa_0161",
+    "question": "What should I do during a thunderstorm?",
+    "answer": "Stay indoors, away from windows. Avoid water and metal objects. If outdoors, avoid tall objects and open fields. Crouch low if no shelter is available. Wait 30 minutes after the last thunder.",
+    "category": "safety",
+    "domain": "weather",
+    "confidence": 0.89
+  },
+  {
+    "id": "wqa_0162",
+    "question": "Explain what should i do during a thunderstorm?",
+    "answer": "Stay indoors, away from windows. Avoid water and metal objects. If outdoors, avoid tall objects and open fields. Crouch low if no shelter is available. Wait 30 minutes after the last thunder.",
+    "category": "safety",
+    "domain": "weather",
+    "confidence": 0.86
+  },
+  {
+    "id": "wqa_0163",
+    "question": "Please describe what should i do during a thunderstorm?",
+    "answer": "Stay indoors, away from windows. Avoid water and metal objects. If outdoors, avoid tall objects and open fields. Crouch low if no shelter is available. Wait 30 minutes after the last thunder.",
+    "category": "safety",
+    "domain": "weather",
+    "confidence": 0.95
+  },
+  {
+    "id": "wqa_0164",
+    "question": "I'd like to know what should i do during a thunderstorm?",
+    "answer": "Stay indoors, away from windows. Avoid water and metal objects. If outdoors, avoid tall objects and open fields. Crouch low if no shelter is available. Wait 30 minutes after the last thunder.",
+    "category": "safety",
+    "domain": "weather",
+    "confidence": 0.92
+  },
+  {
+    "id": "wqa_0165",
+    "question": "How to prepare for a hurricane?",
+    "answer": "Stock emergency supplies (water, food, medicine for 3+ days). Board windows, secure outdoor items. Know evacuation routes. Charge devices. Follow official weather advisories.",
+    "category": "safety",
+    "domain": "weather",
+    "confidence": 0.94
+  },
+  {
+    "id": "wqa_0166",
+    "question": "I'd like to know how to prepare for a hurricane?",
+    "answer": "Stock emergency supplies (water, food, medicine for 3+ days). Board windows, secure outdoor items. Know evacuation routes. Charge devices. Follow official weather advisories.",
+    "category": "safety",
+    "domain": "weather",
+    "confidence": 0.88
+  },
+  {
+    "id": "wqa_0167",
+    "question": "What exactly is how to prepare for a hurricane?",
+    "answer": "Stock emergency supplies (water, food, medicine for 3+ days). Board windows, secure outdoor items. Know evacuation routes. Charge devices. Follow official weather advisories.",
+    "category": "safety",
+    "domain": "weather",
+    "confidence": 0.9
+  },
+  {
+    "id": "wqa_0168",
+    "question": "Explain how to prepare for a hurricane?",
+    "answer": "Stock emergency supplies (water, food, medicine for 3+ days). Board windows, secure outdoor items. Know evacuation routes. Charge devices. Follow official weather advisories.",
+    "category": "safety",
+    "domain": "weather",
+    "confidence": 0.96
+  },
+  {
+    "id": "wqa_0169",
+    "question": "What is a heat advisory?",
+    "answer": "A heat advisory is issued when the heat index is expected to reach 105-109\u00b0F for 2+ hours. Stay hydrated, wear light clothing, limit outdoor activity, and check on vulnerable individuals.",
+    "category": "safety",
+    "domain": "weather",
+    "confidence": 0.89
+  },
+  {
+    "id": "wqa_0170",
+    "question": "What exactly is a heat advisory?",
+    "answer": "A heat advisory is issued when the heat index is expected to reach 105-109\u00b0F for 2+ hours. Stay hydrated, wear light clothing, limit outdoor activity, and check on vulnerable individuals.",
+    "category": "safety",
+    "domain": "weather",
+    "confidence": 0.93
+  },
+  {
+    "id": "wqa_0171",
+    "question": "Please describe a heat advisory?",
+    "answer": "A heat advisory is issued when the heat index is expected to reach 105-109\u00b0F for 2+ hours. Stay hydrated, wear light clothing, limit outdoor activity, and check on vulnerable individuals.",
+    "category": "safety",
+    "domain": "weather",
+    "confidence": 0.93
+  },
+  {
+    "id": "wqa_0172",
+    "question": "I'd like to know a heat advisory?",
+    "answer": "A heat advisory is issued when the heat index is expected to reach 105-109\u00b0F for 2+ hours. Stay hydrated, wear light clothing, limit outdoor activity, and check on vulnerable individuals.",
+    "category": "safety",
+    "domain": "weather",
+    "confidence": 0.86
+  },
+  {
+    "id": "wqa_0173",
+    "question": "What does a flood watch mean?",
+    "answer": "A flood watch means conditions are favorable for flooding. A flood warning means flooding is imminent or occurring. Move to higher ground immediately during a warning.",
+    "category": "safety",
+    "domain": "weather",
+    "confidence": 0.97
+  },
+  {
+    "id": "wqa_0174",
+    "question": "What exactly is what does a flood watch mean?",
+    "answer": "A flood watch means conditions are favorable for flooding. A flood warning means flooding is imminent or occurring. Move to higher ground immediately during a warning.",
+    "category": "safety",
+    "domain": "weather",
+    "confidence": 0.88
+  },
+  {
+    "id": "wqa_0175",
+    "question": "Please describe what does a flood watch mean?",
+    "answer": "A flood watch means conditions are favorable for flooding. A flood warning means flooding is imminent or occurring. Move to higher ground immediately during a warning.",
+    "category": "safety",
+    "domain": "weather",
+    "confidence": 0.89
+  },
+  {
+    "id": "wqa_0176",
+    "question": "I'd like to know what does a flood watch mean?",
+    "answer": "A flood watch means conditions are favorable for flooding. A flood warning means flooding is imminent or occurring. Move to higher ground immediately during a warning.",
+    "category": "safety",
+    "domain": "weather",
+    "confidence": 0.88
+  }
+]

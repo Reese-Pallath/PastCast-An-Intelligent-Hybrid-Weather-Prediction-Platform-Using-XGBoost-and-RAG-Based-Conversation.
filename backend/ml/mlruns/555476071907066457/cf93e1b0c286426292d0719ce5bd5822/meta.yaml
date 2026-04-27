@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/reesepallath/Documents/PastCast_Backups/pastcast-Main/backend/ml/mlruns/555476071907066457/cf93e1b0c286426292d0719ce5bd5822/artifacts
+end_time: 1776949325526
+entry_point_name: ''
+experiment_id: '555476071907066457'
+lifecycle_stage: active
+run_id: cf93e1b0c286426292d0719ce5bd5822
+run_name: RandomForest-Baseline
+run_uuid: cf93e1b0c286426292d0719ce5bd5822
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776949322508
+status: 3
+tags: []
+user_id: reesepallath

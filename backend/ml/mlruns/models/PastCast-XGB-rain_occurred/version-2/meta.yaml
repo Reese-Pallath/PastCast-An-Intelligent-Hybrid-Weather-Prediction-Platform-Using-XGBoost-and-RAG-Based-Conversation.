@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1776949804059
+current_stage: None
+description: null
+last_updated_timestamp: 1776949804059
+name: PastCast-XGB-rain_occurred
+run_id: 76435b5809814d86a79dfd3fcc98a155
+run_link: null
+source: file:///Users/reesepallath/Documents/PastCast_Backups/pastcast-Main/backend/ml/mlruns/555476071907066457/76435b5809814d86a79dfd3fcc98a155/artifacts/model_rain_occurred
+status: READY
+status_message: null
+storage_location: file:///Users/reesepallath/Documents/PastCast_Backups/pastcast-Main/backend/ml/mlruns/555476071907066457/76435b5809814d86a79dfd3fcc98a155/artifacts/model_rain_occurred
+user_id: null
+version: 2

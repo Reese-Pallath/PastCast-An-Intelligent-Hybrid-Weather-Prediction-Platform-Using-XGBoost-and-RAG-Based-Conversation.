@@ -2,7 +2,7 @@ export const API_KEYS = {
   GEMINI: process.env.REACT_APP_GEMINI || 'YOUR_GEMINI_API_KEY_HERE',
   OPENWEATHERMAP:
     process.env.REACT_APP_OPENWEATHER_API || 'YOUR_OPENWEATHERMAP_API_KEY',
-  WEATHERAPI: '', // not used, kept for compatibility
+  WEATHERAPI: '', 
 };
 
 export const API_ENDPOINTS = {

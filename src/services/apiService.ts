@@ -1,5 +1,3 @@
-// Centralized API Service for Real-time Data Integration
-// Supports Weather, News, Finance, and Knowledge APIs
 
 export interface ApiConfig {
   weather: {
@@ -71,19 +69,18 @@ export class ApiService {
     this.config = config;
   }
 
-  // Weather API Methods
   async getCurrentWeather(city: string, country?: string): Promise<WeatherData> {
     try {
       const location = country ? `${city},${country}` : city;
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${this.config.weather.openWeatherMap}`;
-      
+
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error(`Weather API Error: ${response.status}`);
       }
-      
+
       const data = await response.json();
-      
+
       return {
         location: data.name,
         temperature: data.main.temp,
@@ -108,17 +105,16 @@ export class ApiService {
     try {
       const location = country ? `${city},${country}` : city;
       const url = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=metric&appid=${this.config.weather.openWeatherMap}`;
-      
+
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error(`Weather API Error: ${response.status}`);
       }
-      
+
       const data = await response.json();
-      
-      // Group by day and take first forecast of each day
+
       const dailyForecasts = data.list.slice(0, days * 8).filter((_: any, index: number) => index % 8 === 0);
-      
+
       return dailyForecasts.map((item: any) => ({
         location: data.city.name,
         temperature: item.main.temp,
@@ -139,26 +135,25 @@ export class ApiService {
     }
   }
 
-  // News API Methods
   async getNews(country: string = 'in', category?: string, query?: string): Promise<NewsArticle[]> {
     try {
       let url = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${this.config.news.newsApi}`;
-      
+
       if (category) {
         url += `&category=${category}`;
       }
-      
+
       if (query) {
         url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(query)}&apiKey=${this.config.news.newsApi}`;
       }
-      
+
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error(`News API Error: ${response.status}`);
       }
-      
+
       const data = await response.json();
-      
+
       return data.articles.map((article: any) => ({
         title: article.title,
         description: article.description,
@@ -176,14 +171,14 @@ export class ApiService {
   async getGlobalNews(query: string): Promise<NewsArticle[]> {
     try {
       const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(query)}&sortBy=publishedAt&apiKey=${this.config.news.newsApi}`;
-      
+
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error(`News API Error: ${response.status}`);
       }
-      
+
       const data = await response.json();
-      
+
       return data.articles.map((article: any) => ({
         title: article.title,
         description: article.description,
@@ -198,24 +193,23 @@ export class ApiService {
     }
   }
 
-  // Finance API Methods
   async getStockData(symbol: string): Promise<StockData> {
     try {
-      // Using Alpha Vantage API
+
       const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${this.config.finance.alphaVantage}`;
-      
+
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error(`Finance API Error: ${response.status}`);
       }
-      
+
       const data = await response.json();
       const quote = data['Global Quote'];
-      
+
       if (!quote || !quote['01. symbol']) {
         throw new Error('Invalid stock symbol or API response');
       }
-      
+
       return {
         symbol: quote['01. symbol'],
         price: parseFloat(quote['05. price']),
@@ -235,7 +229,7 @@ export class ApiService {
   async getIndianStocks(): Promise<StockData[]> {
     const indianStocks = ['RELIANCE.BSE', 'TCS.BSE', 'HDFCBANK.BSE', 'INFY.BSE', 'HINDUNILVR.BSE'];
     const stockData: StockData[] = [];
-    
+
     for (const symbol of indianStocks) {
       try {
         const data = await this.getStockData(symbol);
@@ -244,22 +238,21 @@ export class ApiService {
         console.error(`Failed to fetch data for ${symbol}:`, error);
       }
     }
-    
+
     return stockData;
   }
 
-  // Knowledge API Methods
   async searchWikipedia(query: string): Promise<KnowledgeResult[]> {
     try {
       const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(query)}`;
-      
+
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error(`Wikipedia API Error: ${response.status}`);
       }
-      
+
       const data = await response.json();
-      
+
       return [{
         title: data.title,
         description: data.extract,
@@ -275,18 +268,18 @@ export class ApiService {
 
   async searchDuckDuckGo(query: string): Promise<KnowledgeResult[]> {
     try {
-      // DuckDuckGo Instant Answer API
+
       const url = `https://api.duckduckgo.com/?q=${encodeURIComponent(query)}&format=json&no_html=1&skip_disambig=1`;
-      
+
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error(`DuckDuckGo API Error: ${response.status}`);
       }
-      
+
       const data = await response.json();
-      
+
       const results: KnowledgeResult[] = [];
-      
+
       if (data.Abstract) {
         results.push({
           title: data.Heading || query,
@@ -296,7 +289,7 @@ export class ApiService {
           imageUrl: data.Image
         });
       }
-      
+
       if (data.RelatedTopics) {
         data.RelatedTopics.slice(0, 3).forEach((topic: any) => {
           if (topic.Text && topic.FirstURL) {
@@ -309,7 +302,7 @@ export class ApiService {
           }
         });
       }
-      
+
       return results;
     } catch (error) {
       console.error('DuckDuckGo API Error:', error);
@@ -317,16 +310,15 @@ export class ApiService {
     }
   }
 
-  // Utility Methods
   async getLocationFromCoordinates(lat: number, lon: number): Promise<string> {
     try {
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${this.config.weather.openWeatherMap}`;
-      
+
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error(`Location API Error: ${response.status}`);
       }
-      
+
       const data = await response.json();
       return `${data.name}, ${data.sys.country}`;
     } catch (error) {
@@ -335,7 +327,6 @@ export class ApiService {
     }
   }
 
-  // Error handling and retry logic
   private async retryRequest<T>(requestFn: () => Promise<T>, maxRetries: number = 3): Promise<T> {
     for (let i = 0; i < maxRetries; i++) {
       try {
@@ -349,11 +340,10 @@ export class ApiService {
   }
 }
 
-// Default configuration
 export const defaultApiConfig: ApiConfig = {
   weather: {
-    openWeatherMap: 'YOUR_OPENWEATHERMAP_API_KEY',
-    weatherStack: 'YOUR_WEATHERSTACK_API_KEY'
+    openWeatherMap: process.env.REACT_APP_OPENWEATHER_API || process.env.REACT_APP_OPENWEATHER_API_KEY || '',
+    weatherStack: ''
   },
   news: {
     newsApi: 'YOUR_NEWSAPI_KEY',
@@ -369,5 +359,4 @@ export const defaultApiConfig: ApiConfig = {
   }
 };
 
-// Create default API service instance
 export const apiService = new ApiService(defaultApiConfig);

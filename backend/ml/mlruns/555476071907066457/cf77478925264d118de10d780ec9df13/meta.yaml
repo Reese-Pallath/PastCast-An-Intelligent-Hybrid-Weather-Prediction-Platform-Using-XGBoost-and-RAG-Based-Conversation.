@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/reesepallath/Documents/PastCast_Backups/pastcast-Main/backend/ml/mlruns/555476071907066457/cf77478925264d118de10d780ec9df13/artifacts
+end_time: 1776949320425
+entry_point_name: ''
+experiment_id: '555476071907066457'
+lifecycle_stage: active
+run_id: cf77478925264d118de10d780ec9df13
+run_name: XGBoost-MultiTarget
+run_uuid: cf77478925264d118de10d780ec9df13
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776949305063
+status: 3
+tags: []
+user_id: reesepallath

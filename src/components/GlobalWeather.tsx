@@ -19,7 +19,6 @@ const GlobalWeather: React.FC<GlobalWeatherProps> = ({ onLocationSelect }) => {
   const [isGettingLocation, setIsGettingLocation] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Search for locations
   const handleSearch = async () => {
     if (!searchQuery.trim()) return;
 
@@ -37,7 +36,6 @@ const GlobalWeather: React.FC<GlobalWeatherProps> = ({ onLocationSelect }) => {
     }
   };
 
-  // Get weather data for selected location
   const handleLocationSelect = async (lat: number, lon: number, name: string) => {
     setIsLoading(true);
     setError(null);
@@ -57,7 +55,6 @@ const GlobalWeather: React.FC<GlobalWeatherProps> = ({ onLocationSelect }) => {
     }
   };
 
-  // Get user's current location
   const getCurrentLocation = () => {
     if (!navigator.geolocation) {
       alert('Geolocation is not supported by this browser.');
@@ -72,14 +69,13 @@ const GlobalWeather: React.FC<GlobalWeatherProps> = ({ onLocationSelect }) => {
         const { latitude, longitude } = position.coords;
 
         try {
-          // Get weather data for current location
+
           const weather = await WeatherAPIHandler.getWeatherByCoordinates(
             latitude,
             longitude
           );
           setWeatherData(weather);
 
-          // Get address from coordinates
           const response = await fetch(
             `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&addressdetails=1`
           );
@@ -121,24 +117,21 @@ const GlobalWeather: React.FC<GlobalWeatherProps> = ({ onLocationSelect }) => {
       {
         enableHighAccuracy: true,
         timeout: 10000,
-        maximumAge: 300000, // 5 minutes
+        maximumAge: 300000, 
       }
     );
   };
 
-  // Get weather icon URL
   const getWeatherIconUrl = (icon: string) => {
     return `https://openweathermap.org/img/wn/${icon}@2x.png`;
   };
 
-  // Format temperature
   const formatTemperature = (temp: number) => {
     return `${Math.round(temp)}°C`;
   };
 
-  // Format wind speed
   const formatWindSpeed = (speed: number) => {
-    return `${Math.round(speed * 3.6)} km/h`; // Convert m/s to km/h
+    return `${Math.round(speed * 3.6)} km/h`; 
   };
 
   return (
@@ -166,7 +159,7 @@ const GlobalWeather: React.FC<GlobalWeatherProps> = ({ onLocationSelect }) => {
           </h2>
         </div>
 
-        {/* Search Section */}
+        {}
         <div className="mb-8">
           <div className="flex items-center space-x-3 mb-6">
             <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center">
@@ -262,7 +255,7 @@ const GlobalWeather: React.FC<GlobalWeatherProps> = ({ onLocationSelect }) => {
             </button>
           </div>
 
-          {/* Search Results */}
+          {}
           {searchResults.length > 0 && (
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 mb-6 border border-white/10 shadow-lg animate-in fade-in-50 duration-500">
               <div className="flex items-center space-x-3 mb-4">
@@ -332,7 +325,7 @@ const GlobalWeather: React.FC<GlobalWeatherProps> = ({ onLocationSelect }) => {
             </div>
           )}
 
-          {/* Error Message */}
+          {}
           {error && (
             <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4 mb-6 backdrop-blur-sm">
               <div className="flex items-center space-x-3">
@@ -357,10 +350,10 @@ const GlobalWeather: React.FC<GlobalWeatherProps> = ({ onLocationSelect }) => {
           )}
         </div>
 
-        {/* Weather Display */}
+        {}
         {weatherData && (
           <div className="space-y-8 animate-in fade-in-50 duration-500">
-            {/* Current Weather */}
+            {}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-2xl hover:shadow-blue-500/10 transition-all duration-300">
               <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center space-x-4">
@@ -416,7 +409,7 @@ const GlobalWeather: React.FC<GlobalWeatherProps> = ({ onLocationSelect }) => {
                 </div>
               </div>
 
-              {/* Weather Details */}
+              {}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 text-center border border-white/10 shadow-lg hover:shadow-blue-500/10 transition-all duration-300 transform hover:scale-105">
                   <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center mx-auto mb-3">
@@ -516,7 +509,7 @@ const GlobalWeather: React.FC<GlobalWeatherProps> = ({ onLocationSelect }) => {
               </div>
             </div>
 
-            {/* Forecast */}
+            {}
             {weatherData.forecast.length > 0 && (
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-2xl hover:shadow-blue-500/10 transition-all duration-300">
                 <div className="flex items-center space-x-3 mb-6">
@@ -580,7 +573,7 @@ const GlobalWeather: React.FC<GlobalWeatherProps> = ({ onLocationSelect }) => {
           </div>
         )}
 
-        {/* Instructions */}
+        {}
         {!weatherData && (
           <div className="text-center py-12">
             <div className="mb-6">

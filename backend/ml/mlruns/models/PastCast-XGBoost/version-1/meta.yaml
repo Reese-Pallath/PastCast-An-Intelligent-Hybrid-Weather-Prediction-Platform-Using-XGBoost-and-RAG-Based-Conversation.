@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1776745749526
+current_stage: None
+description: null
+last_updated_timestamp: 1776745749526
+name: PastCast-XGBoost
+run_id: 291cd889acf440eab0408070c4c93a45
+run_link: null
+source: file:///Users/reesepallath/Documents/PastCast_Backups/pastcast-Main/backend/ml/mlruns/555476071907066457/291cd889acf440eab0408070c4c93a45/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///Users/reesepallath/Documents/PastCast_Backups/pastcast-Main/backend/ml/mlruns/555476071907066457/291cd889acf440eab0408070c4c93a45/artifacts/model
+user_id: null
+version: 1

@@ -8,18 +8,34 @@ import ComparisonResults from './components/ComparisonResults';
 import EnhancedAIChat from './components/EnhancedAIChat';
 import ChatbotWidget from './components/ChatbotWidget';
 import LoadingScreen from './components/LoadingScreen';
+import ErrorBoundary from './components/ErrorBoundary';
+import { ToastContainer, showToast } from './components/Toast';
+import { post } from './services/apiClient';
 import { LocationInput, WeatherData } from './types/weather';
 
 function App() {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
-  const [comparisonData, setComparisonData] = useState<any>(null);
+  const [comparisonData, setComparisonData] = useState<{
+    locations: Array<{
+      location: WeatherData['location'];
+      probabilities: WeatherData['probabilities'];
+      data_quality: string;
+      risk_level: string;
+    }>;
+    analysis_period: string;
+    data_sources: string[];
+    comparison_summary: {
+      best_locations: Record<string, string>;
+      worst_locations: Record<string, string>;
+      overall_risk: string;
+    };
+  } | null>(null);
   const [showComparison, setShowComparison] = useState(false);
   const [activeTab, setActiveTab] = useState('weather');
   const [isLoading, setIsLoading] = useState(false);
   const [isAppLoading, setIsAppLoading] = useState(true);
   const [showWeatherHighlight, setShowWeatherHighlight] = useState(false);
 
-  // Fallback timeout to ensure app loads even if loading screen fails
   useEffect(() => {
     const fallbackTimer = setTimeout(() => {
       if (isAppLoading) {
@@ -29,12 +45,11 @@ function App() {
         setShowWeatherHighlight(true);
         setTimeout(() => setShowWeatherHighlight(false), 2000);
       }
-    }, 10000); // 10 second fallback
+    }, 10000); 
 
     return () => clearTimeout(fallbackTimer);
   }, [isAppLoading]);
 
-  // Scroll animation effect
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -49,7 +64,6 @@ function App() {
       });
     }, observerOptions);
 
-    // Observe all elements with scroll-animate class
     const animateElements = document.querySelectorAll('.scroll-animate');
     animateElements.forEach((el) => observer.observe(el));
 
@@ -58,19 +72,17 @@ function App() {
     };
   }, [activeTab]);
 
-  // Handle loading screen completion
   const handleLoadingComplete = () => {
     console.log('Loading completed, switching to weather tab');
     setIsAppLoading(false);
-    // Automatically set to weather forecast tab after loading
+
     setActiveTab('weather');
-    // Show highlight effect for the weather tab
+
     setShowWeatherHighlight(true);
-    // Remove highlight after animation
+
     setTimeout(() => setShowWeatherHighlight(false), 2000);
   };
 
-  // Show loading screen initially
   if (isAppLoading) {
     return <LoadingScreen onComplete={handleLoadingComplete} />;
   }
@@ -78,33 +90,21 @@ function App() {
   const handleWeatherSubmit = async (location: LocationInput, startDate: string, endDate?: string, datasetMode?: 'IMD' | 'Global' | 'Combined') => {
     setIsLoading(true);
     try {
-      // Make actual API call to the mock server
-      const response = await fetch('http://localhost:8000/weather/probability', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+
+      const weatherData: WeatherData = await post<WeatherData>('/weather/probability', {
+        location,
+        date_range: {
+          start_date: startDate,
+          end_date: endDate
         },
-        body: JSON.stringify({
-          location,
-          date_range: {
-            start_date: startDate,
-            end_date: endDate
-          },
-          dataset_mode: datasetMode
-        })
+        dataset_mode: datasetMode
       });
-
-      if (!response.ok) {
-        throw new Error(`API Error: ${response.status}`);
-      }
-
-      const weatherData: WeatherData = await response.json();
       setWeatherData(weatherData);
       setShowComparison(false);
     } catch (error) {
       console.error('Error fetching weather data:', error);
-      // Show error message to user
-      alert('Failed to fetch weather data. Please try again or use the Global Weather tab for real-time data.');
+
+      showToast('error', 'Weather Fetch Failed', 'Please try again or use the Global Weather tab for real-time data.');
     } finally {
       setIsLoading(false);
     }
@@ -113,33 +113,20 @@ function App() {
   const handleComparisonSubmit = async (locations: LocationInput[], startDate: string, endDate?: string, datasetMode?: 'IMD' | 'Global' | 'Combined') => {
     setIsLoading(true);
     try {
-      // Make API calls for each location
+
       const comparisonPromises = locations.map(async (location) => {
-        const response = await fetch('http://localhost:8000/weather/probability', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
+        return post<WeatherData>('/weather/probability', {
+          location,
+          date_range: {
+            start_date: startDate,
+            end_date: endDate
           },
-          body: JSON.stringify({
-        location,
-        date_range: {
-          start_date: startDate,
-          end_date: endDate
-        },
-            dataset_mode: datasetMode
-          })
+          dataset_mode: datasetMode
         });
-
-        if (!response.ok) {
-          throw new Error(`API Error: ${response.status}`);
-        }
-
-        return await response.json();
       });
 
       const comparisonResults = await Promise.all(comparisonPromises);
-      
-      // Create a combined comparison result
+
       const comparisonData = {
         locations: comparisonResults.map((result, index) => ({
           location: result.location,
@@ -160,21 +147,20 @@ function App() {
       setShowComparison(true);
     } catch (error) {
       console.error('Error fetching comparison data:', error);
-      alert('Failed to fetch comparison data. Please try again.');
+      showToast('error', 'Comparison Failed', 'Please try again.');
     } finally {
       setIsLoading(false);
     }
   };
 
-  // Helper functions for comparison analysis
-  const getBestLocations = (results: any[]) => {
+  const getBestLocations = (results: WeatherData[]) => {
     const bestLocations: { [key: string]: string } = {};
-    const conditions = ['rain', 'extreme_heat', 'high_wind', 'cloudy', 'good_weather'];
-    
+    const conditions = ['rain', 'extreme_heat', 'high_wind', 'cloudy', 'good_weather'] as const;
+
     conditions.forEach(condition => {
       let bestLocation = '';
       let bestValue = condition === 'good_weather' ? -1 : 999;
-      
+
       results.forEach((result, index) => {
         const prob = result.probabilities[condition]?.probability;
         if (prob !== null && prob !== undefined) {
@@ -191,23 +177,23 @@ function App() {
           }
         }
       });
-      
+
       if (bestLocation) {
         bestLocations[condition] = bestLocation;
       }
     });
-    
+
     return bestLocations;
   };
 
-  const getWorstLocations = (results: any[]) => {
+  const getWorstLocations = (results: WeatherData[]) => {
     const worstLocations: { [key: string]: string } = {};
-    const conditions = ['rain', 'extreme_heat', 'high_wind', 'cloudy', 'good_weather'];
-    
+    const conditions = ['rain', 'extreme_heat', 'high_wind', 'cloudy', 'good_weather'] as const;
+
     conditions.forEach(condition => {
       let worstLocation = '';
       let worstValue = condition === 'good_weather' ? 999 : -1;
-      
+
       results.forEach((result, index) => {
         const prob = result.probabilities[condition]?.probability;
         if (prob !== null && prob !== undefined) {
@@ -224,47 +210,48 @@ function App() {
           }
         }
       });
-      
+
       if (worstLocation) {
         worstLocations[condition] = worstLocation;
       }
     });
-    
+
     return worstLocations;
   };
 
-  const calculateOverallRisk = (results: any[]) => {
+  const calculateOverallRisk = (results: WeatherData[]) => {
     const riskLevels = results.map(result => result.probabilities.summary.risk_level);
     const riskCounts = riskLevels.reduce((acc, risk) => {
       acc[risk] = (acc[risk] || 0) + 1;
       return acc;
     }, {} as { [key: string]: number });
-    
+
     const maxRisk = Object.keys(riskCounts).reduce((a, b) => riskCounts[a] > riskCounts[b] ? a : b);
     return maxRisk;
   };
 
 
-  console.log('App rendering, activeTab:', activeTab, 'isAppLoading:', isAppLoading);
 
   return (
+    <ErrorBoundary>
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-      {/* Professional Animated Background */}
+      <ToastContainer />
+      {}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Subtle Gradient Orbs */}
+        {}
         <div className="absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-r from-blue-600/10 to-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-gradient-to-r from-indigo-600/10 to-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '3s' }}></div>
         <div className="absolute top-1/3 right-1/3 w-48 h-48 bg-gradient-to-r from-slate-600/8 to-blue-500/8 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '6s' }}></div>
-        
-        {/* Professional Grid Pattern */}
+
+        {}
         <div className="absolute inset-0 opacity-[0.02]">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)`,
             backgroundSize: '20px 20px'
           }}></div>
         </div>
-        
-        {/* Subtle Floating Elements */}
+
+        {}
         <div className="absolute inset-0 overflow-hidden">
           {[...Array(6)].map((_, i) => (
             <div
@@ -281,9 +268,8 @@ function App() {
             </div>
           ))}
         </div>
-        
-        
-        {/* Subtle Particle System */}
+
+        {}
         <div className="absolute inset-0">
           {[...Array(8)].map((_, i) => (
             <div
@@ -298,16 +284,16 @@ function App() {
             ></div>
           ))}
         </div>
-        
-        {/* Gradient Mesh Overlay */}
+
+        {}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-purple-600/5 to-cyan-600/5 opacity-60"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-blue-500/5 to-transparent"></div>
       </div>
-      
+
       <Header />
-      
+
       <main className="container mx-auto px-4 py-4 relative z-10">
-                    {/* Professional Tab Navigation */}
+                    {}
         <div className="flex justify-center mb-4">
                         <div className="bg-white/5 backdrop-blur-md rounded-2xl p-2 border border-white/10 shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
                             <div className="flex space-x-1">
@@ -375,18 +361,16 @@ function App() {
           </div>
         </div>
 
-        {/* Tab Content */}
+        {}
         {activeTab === 'weather' && (
           <div
             id="weather-forecast-section"
             className="space-y-6"
           >
-            {/* Debug Message */}
-            <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4 text-green-400 text-sm">
-                                ✅ Weather Forecast Tab is Active - Loading screen completed successfully!
-                            </div>
-                            
-                            {/* Welcome Message */}
+            {}
+
+
+                            {}
                             {showWeatherHighlight && (
                                 <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 backdrop-blur-md rounded-2xl p-6 border border-blue-400/20 shadow-lg slide-in-left">
                                     <div className="flex items-center space-x-3">
@@ -402,7 +386,7 @@ function App() {
                                     </div>
                                 </div>
                             )}
-                            
+
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                                 <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 shadow-xl hover:shadow-blue-500/10 transition-all duration-300 relative overflow-hidden group slide-in-left">
                                     <div className="relative z-10">
@@ -445,8 +429,8 @@ function App() {
             <ComparisonView onSubmit={handleComparisonSubmit} isLoading={isLoading} />
                       </div>
                     </div>
-                    
-                    {/* Loading Overlay */}
+
+                    {}
                     {isLoading && (
                       <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center">
                         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-2xl text-center">
@@ -461,7 +445,7 @@ function App() {
                         </div>
                       </div>
                     )}
-                    
+
                     {showComparison && comparisonData && (
                       <div className="animate-in fade-in-50 duration-700">
                         <ComparisonResults data={comparisonData} />
@@ -479,9 +463,9 @@ function App() {
         )}
       </main>
 
-      {/* AI Chatbot Widget - Always visible */}
-      <ChatbotWidget />
+      <ChatbotWidget onNavigateToChat={() => setActiveTab('chat')} />
     </div>
+    </ErrorBoundary>
   );
 }
 

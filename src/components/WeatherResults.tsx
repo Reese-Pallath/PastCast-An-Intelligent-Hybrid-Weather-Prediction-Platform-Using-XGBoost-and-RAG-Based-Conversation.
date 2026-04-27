@@ -9,7 +9,6 @@ export interface WeatherResultsProps {
 const WeatherResults: React.FC<WeatherResultsProps> = ({ data, isComparison = false }) => {
   const { location, probabilities, ai_insights, data_sources, analysis_period } = data;
 
-  // Prepare data for display
   const conditions = Object.entries(probabilities).filter(([key, value]) => 
     key !== 'summary' && 'label' in value
   );
@@ -43,72 +42,57 @@ const WeatherResults: React.FC<WeatherResultsProps> = ({ data, isComparison = fa
           </div>
         </div>
 
-      {/* Probability Cards */}
+      {}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         {conditions.map(([key, condition], index) => {
           if ('label' in condition) {
-            const rawThreshold = condition.threshold || '';
-            const annotated = rawThreshold.replace('35°C', '35°C (Global)').replace('40°C', '40°C (India)');
-            const cleaned = annotated.replace(/^\s*[>≥]\s*/, '');
-            const showThreshold = !isComparison && key !== 'good_weather' && cleaned.trim().length > 0;
+            const icon: Record<string, string> = {
+              rain: '🌧️', cloudy: '☁️', extreme_heat: '☀️',
+              high_wind: '💨', good_weather: '✅',
+            };
             return (
-              <div 
-                key={key} 
+              <div
+                key={key}
                 className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 shadow-lg hover:shadow-blue-500/10 transition-all duration-300 transform hover:scale-105 animate-in fade-in-50 relative overflow-hidden group"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                {/* Animated Background Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                {/* High wind icon in corner so it doesn't collide with wrapping text */}
-                {key === 'high_wind' && (
-                  <div className="absolute top-4 right-4 text-2xl text-white/90">
-                    💨
-                  </div>
-                )}
 
-                {/* Card Header with Icons */}
-                <div className="mb-4">
-                  <div className="flex items-baseline gap-2">
-                    <h4 className="text-white font-semibold text-lg leading-tight mb-2">
-                      {condition.description}
-                    </h4>
-                    {key === 'rain' && (
-                      <div className="text-2xl text-white/90 translate-y-1">
-                        🌧️
-                      </div>
-                    )}
-                    {key === 'cloudy' && (
-                      <div className="text-2xl text-white/90 translate-y-1">
-                        ☁️
-                      </div>
-                    )}
-                    {key === 'extreme_heat' && (
-                      <div className="text-2xl text-white/90 translate-y-1">
-                        ☀️
-                      </div>
-                    )}
-                  </div>
+                {/* Card title + icon */}
+                <div className="mb-4 flex items-center justify-between">
+                  <h4 className="text-white font-semibold text-base leading-tight">
+                    {condition.description}
+                  </h4>
+                  {icon[key] && (
+                    <span className="text-2xl text-white/90 ml-2 flex-shrink-0">
+                      {icon[key]}
+                    </span>
+                  )}
                 </div>
-                {/* Probability Content */}
-                <div className="space-y-4">
+
+                {/* Probability + bar + explanation */}
+                <div className="space-y-3">
                   {condition.probability === null ? (
                     <div className="text-white/70 text-sm italic">No data available</div>
                   ) : (
                     <>
                       <div className="text-3xl font-bold text-white bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                        {condition.probability.toFixed(2)}%
+                        {condition.probability.toFixed(1)}%
                       </div>
-                      <div className="w-full bg-white/10 rounded-full h-3">
+                      <div className="w-full bg-white/10 rounded-full h-2">
                         <div
-                          className="bg-gradient-to-r from-blue-500 to-cyan-500 h-3 rounded-full transition-all duration-700 shadow-lg shadow-blue-500/25"
+                          className="bg-gradient-to-r from-blue-500 to-cyan-500 h-2 rounded-full transition-all duration-700 shadow-lg shadow-blue-500/25"
                           style={{ width: `${Math.min(100, Math.max(0, condition.probability))}%` }}
                         ></div>
                       </div>
-                      <div className="flex items-center justify-between text-white/70 text-xs mt-1">
-                        <span className="font-semibold">{condition.label}</span>
-                        {showThreshold && (
-                          <span className="text-white/60">{cleaned}</span>
+                      <div className="pt-1 border-t border-white/5">
+                        <span className="text-white/60 text-xs font-semibold uppercase tracking-wider">
+                          {condition.label}
+                        </span>
+                        {condition.threshold && (
+                          <p className="text-white/50 text-xs mt-1 leading-relaxed">
+                            {condition.threshold}
+                          </p>
                         )}
                       </div>
                     </>
@@ -121,7 +105,7 @@ const WeatherResults: React.FC<WeatherResultsProps> = ({ data, isComparison = fa
         })}
       </div>
 
-      {/* AI Insights */}
+      {}
       {ai_insights && !isComparison && (
         <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-xl p-6 mb-8 border border-white/10 shadow-lg">
           <div className="flex items-center justify-between mb-4">
@@ -144,7 +128,7 @@ const WeatherResults: React.FC<WeatherResultsProps> = ({ data, isComparison = fa
         </div>
       )}
 
-      {/* Data Sources */}
+      {}
       {!isComparison && (
         <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 shadow-lg">
           <div className="flex items-center space-x-3 mb-4">

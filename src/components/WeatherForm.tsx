@@ -33,19 +33,19 @@ const WeatherForm: React.FC<WeatherFormProps> = ({ onSubmit, isLoading }) => {
     }
 
     setIsGettingLocation(true);
-    
+
     navigator.geolocation.getCurrentPosition(
       async (position) => {
         const { latitude, longitude } = position.coords;
-        
+
         try {
-          // Get address from coordinates
+
           const response = await fetch(
             `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&addressdetails=1`
           );
           const data = await response.json();
           const address = data.display_name || `${latitude.toFixed(4)}, ${longitude.toFixed(4)}`;
-          
+
           setSelectedLocation({
             lat: latitude,
             lng: longitude,
@@ -59,13 +59,13 @@ const WeatherForm: React.FC<WeatherFormProps> = ({ onSubmit, isLoading }) => {
             address: `${latitude.toFixed(4)}, ${longitude.toFixed(4)}`
           });
         }
-        
+
         setIsGettingLocation(false);
       },
       (error) => {
         console.error('Error getting location:', error);
         setIsGettingLocation(false);
-        
+
         let errorMessage = 'Unable to get your location. ';
         switch (error.code) {
           case error.PERMISSION_DENIED:
@@ -86,19 +86,19 @@ const WeatherForm: React.FC<WeatherFormProps> = ({ onSubmit, isLoading }) => {
       {
         enableHighAccuracy: true,
         timeout: 10000,
-        maximumAge: 300000 // 5 minutes
+        maximumAge: 300000 
       }
     );
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!selectedLocation) {
       alert('Please select a location on the map');
       return;
     }
-    
+
     if (!startDate) {
       alert('Please select a start date');
       return;
@@ -125,9 +125,9 @@ const WeatherForm: React.FC<WeatherFormProps> = ({ onSubmit, isLoading }) => {
             Weather Probability Analysis
           </h2>
         </div>
-      
+
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Location Selection with Map */}
+        {}
         <div className="space-y-4">
           <div className="flex justify-between items-center">
             <h3 className="text-white font-semibold text-lg flex items-center space-x-2">
@@ -186,7 +186,7 @@ const WeatherForm: React.FC<WeatherFormProps> = ({ onSubmit, isLoading }) => {
           />
         </div>
 
-        {/* Date Selection */}
+        {}
         <div className="space-y-4">
           <h3 className="text-white font-semibold text-lg flex items-center space-x-2">
             <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -217,7 +217,7 @@ const WeatherForm: React.FC<WeatherFormProps> = ({ onSubmit, isLoading }) => {
           </div>
         </div>
 
-        {/* Dataset Source */}
+        {}
         <div className="space-y-4">
           <h3 className="text-white font-semibold text-lg flex items-center space-x-2">
             <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -244,7 +244,7 @@ const WeatherForm: React.FC<WeatherFormProps> = ({ onSubmit, isLoading }) => {
           <p className="text-white/60 text-sm">IMD focuses on India; Global uses NASA/NOAA; Combined merges when available.</p>
         </div>
 
-        {/* Submit Button */}
+        {}
         <button
           type="submit"
           disabled={isLoading || !selectedLocation}
@@ -266,7 +266,7 @@ const WeatherForm: React.FC<WeatherFormProps> = ({ onSubmit, isLoading }) => {
         </button>
       </form>
 
-      {/* Info Section */}
+      {}
       <div className="mt-6 p-4 bg-white/5 rounded-lg">
         <h3 className="text-white font-medium mb-2">What PastCast Analyzes:</h3>
         <ul className="text-white/80 text-sm space-y-1">

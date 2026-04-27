@@ -3,7 +3,6 @@ import { MapContainer, TileLayer, Marker, Popup, useMapEvents, useMap } from 're
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-// Fix for default markers in react-leaflet
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
@@ -43,25 +42,24 @@ const LocationMap: React.FC<LocationMapProps> = ({
   );
   const [address, setAddress] = useState<string>('');
 
-  // Reverse geocoding to get address from coordinates
   const getAddressFromCoords = async (lat: number, lng: number) => {
     try {
       const response = await fetch(
         `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&addressdetails=1`
       );
       const data = await response.json();
-      
+
       if (data.display_name) {
-        // Get city, state, country
+
         const city = data.address?.city || data.address?.town || data.address?.village || '';
         const state = data.address?.state || '';
         const country = data.address?.country || '';
-        
+
         let address = '';
         if (city) address += city;
         if (state) address += `, ${state}`;
         if (country) address += `, ${country}`;
-        
+
         return address || data.display_name;
       }
       return `${lat.toFixed(4)}, ${lng.toFixed(4)}`;
@@ -97,8 +95,8 @@ const LocationMap: React.FC<LocationMapProps> = ({
         <p className="text-white/70 text-sm mb-4">
           Click anywhere on the map to select a location, or search for a specific place.
         </p>
-        
-        {/* Search Box */}
+
+        {}
         <div className="mb-4">
           <input
             type="text"
@@ -127,7 +125,7 @@ const LocationMap: React.FC<LocationMapProps> = ({
           />
         </div>
 
-        {/* Selected Location Info */}
+        {}
         {selectedLocation && (
           <div className="bg-white/10 rounded-lg p-3 mb-4">
             <div className="flex items-center justify-between">
@@ -153,7 +151,7 @@ const LocationMap: React.FC<LocationMapProps> = ({
         )}
       </div>
 
-      {/* Map */}
+      {}
       <div 
         className="rounded-lg overflow-hidden border border-white/20"
         style={{ height }}
@@ -167,7 +165,7 @@ const LocationMap: React.FC<LocationMapProps> = ({
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          
+
           {selectedLocation && (
             <Marker position={[selectedLocation.lat, selectedLocation.lng]}>
               <Popup>
@@ -180,13 +178,13 @@ const LocationMap: React.FC<LocationMapProps> = ({
               </Popup>
             </Marker>
           )}
-          
+
           <MapEvents onLocationSelect={handleLocationSelect} />
           <RecenterOnSelect />
         </MapContainer>
       </div>
 
-      {/* Instructions */}
+      {}
       <div className="mt-4 text-center">
         <p className="text-white/60 text-sm">
           💡 Click anywhere on the map to select a location

@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1776949312392
+current_stage: None
+description: null
+last_updated_timestamp: 1776949312392
+name: PastCast-XGB-extreme_heat
+run_id: cf77478925264d118de10d780ec9df13
+run_link: null
+source: file:///Users/reesepallath/Documents/PastCast_Backups/pastcast-Main/backend/ml/mlruns/555476071907066457/cf77478925264d118de10d780ec9df13/artifacts/model_extreme_heat
+status: READY
+status_message: null
+storage_location: file:///Users/reesepallath/Documents/PastCast_Backups/pastcast-Main/backend/ml/mlruns/555476071907066457/cf77478925264d118de10d780ec9df13/artifacts/model_extreme_heat
+user_id: null
+version: 1
