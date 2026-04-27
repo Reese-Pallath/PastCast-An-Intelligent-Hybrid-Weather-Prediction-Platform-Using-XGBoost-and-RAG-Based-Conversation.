@@ -1,0 +1,41 @@
+services:
+  # ── Backend (Flask API) ──────────────────────────────────────────
+  - type: web
+    name: pastcast-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn wsgi:app --workers 2 --timeout 120 --bind 0.0.0.0:$PORT
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: FLASK_ENV
+        value: production
+      - key: OPENWEATHER_API
+        sync: false   # set manually in Render dashboard
+      - key: CORS_ORIGINS
+        sync: false   # set to your frontend URL after deploy
+
+  # ── Frontend (React static site) ────────────────────────────────
+  - type: web
+    name: pastcast-frontend
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: build
+    plan: free
+    envVars:
+      - key: REACT_APP_OPENWEATHER_API
+        sync: false   # set manually in Render dashboard
+      - key: REACT_APP_OPENWEATHER_API_KEY
+        sync: false
+      - key: REACT_APP_GEMINI
+        sync: false
+      - key: REACT_APP_API_BASE_URL
+        sync: false   # set to your backend URL after deploy e.g. https://pastcast-backend.onrender.com
+      - key: REACT_APP_BACKEND_URL
+        sync: false
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
