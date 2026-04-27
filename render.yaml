@@ -18,8 +18,9 @@ services:
         sync: false
 
   # ── Frontend (React static site) ────────────────────────────────
-  - type: static
+  - type: web
     name: pastcast-frontend
+    runtime: static
     buildCommand: npm ci && npm run build
     staticPublishPath: build
     envVars:
