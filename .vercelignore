@@ -1,0 +1,7 @@
+backend/
+hf-space/
+*.py
+*.md
+docker-compose.yml
+Dockerfile
+render.yaml
