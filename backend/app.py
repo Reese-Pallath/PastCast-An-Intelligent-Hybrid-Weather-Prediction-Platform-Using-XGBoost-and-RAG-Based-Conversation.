@@ -122,6 +122,19 @@ def create_app(config=None):
             logger.warning("LSTM memory loaded but encoder not ready")
     app.config["LSTM_MEMORY"] = lstm_memory
 
+    # ── Pre-warm NLP model in background ────────────────────────
+    # Qwen2.5-1.5B downloads ~3 GB on first use; starting this early means
+    # the model is ready (or close to it) by the time the first chat request
+    # arrives, avoiding a visible timeout on the very first message.
+    def _warm_nlp():
+        try:
+            from utils.nlp_model import _try_load_model
+            _try_load_model()
+        except Exception as e:
+            logger.warning("NLP model pre-warm failed: %s", e)
+
+    threading.Thread(target=_warm_nlp, daemon=True).start()
+
     # ── Register Blueprints ─────────────────────────────────────
     from routes.weather import weather_bp
     from routes.chat import chat_bp

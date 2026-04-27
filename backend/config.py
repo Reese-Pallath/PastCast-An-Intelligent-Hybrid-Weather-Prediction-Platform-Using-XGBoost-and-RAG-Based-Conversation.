@@ -60,6 +60,10 @@ class TestingConfig(Config):
 class ProductionConfig(Config):
     """Production-specific overrides."""
     LOG_LEVEL = os.getenv("LOG_LEVEL", "WARNING")
+    # Allow all origins when CORS_ORIGINS is not explicitly set (HF Spaces / Vercel)
+    CORS_ORIGINS = os.getenv("CORS_ORIGINS", "*").split(",")
+    # HF Spaces working directory is read-only; /tmp is always writable
+    DB_PATH = os.getenv("DB_PATH", "/tmp/chat_memory.db")
 
 
 def get_config():
