@@ -4,7 +4,6 @@ import {
   getSessionId,
   createSession,
   clearChat,
-  type MessageResponse,
 } from '../services/messageClient';
 
 interface ChatMessage {

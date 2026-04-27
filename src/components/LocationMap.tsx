@@ -84,7 +84,7 @@ const LocationMap: React.FC<LocationMapProps> = ({
           animate: true
         });
       }
-    }, [map, selectedLocation]);
+    }, [map]); // eslint-disable-line react-hooks/exhaustive-deps
     return null;
   };
 

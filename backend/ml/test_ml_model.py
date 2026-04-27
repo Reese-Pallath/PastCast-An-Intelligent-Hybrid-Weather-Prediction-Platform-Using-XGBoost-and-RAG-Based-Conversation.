@@ -52,7 +52,7 @@ class TestPredictor:
         self.model_path = str(tmp_path / "test_model.pkl")
 
     def test_training_completes(self):
-        assert self.pred.model is not None
+        assert self.pred.models, "models dict should be non-empty after training"
 
     def test_prediction_keys(self):
         sample = {f: 0.0 for f in FEATURE_COLS}
@@ -74,14 +74,14 @@ class TestPredictor:
     def test_save_and_load(self):
         self.pred.save(self.model_path)
         loaded = WeatherRainfallPredictor.load(self.model_path)
-        assert loaded.model is not None
+        assert loaded.models, "loaded models dict should be non-empty"
         sample = {f: 0.0 for f in FEATURE_COLS}
         result = loaded.predict_rain(sample)
         assert "rain_probability" in result
 
     def test_evaluate_metrics(self):
         metrics = self.pred.evaluate(
-            self.pred.model, self.X_test, self.y_test, label="Test"
+            self.pred.models["rain_occurred"], self.X_test, self.y_test["rain_occurred"], label="Test"
         )
         assert metrics["Accuracy"] > 0.5, "Model should beat random chance"
         assert all(k in metrics for k in ["Accuracy", "Precision", "Recall", "F1-Score", "AUC-ROC"])
@@ -95,6 +95,6 @@ class TestPredictor:
         self.pred.train_random_forest(self.X_train, self.y_train)
         assert self.pred.baseline_model is not None
         metrics = self.pred.evaluate(
-            self.pred.baseline_model, self.X_test, self.y_test, label="RF"
+            self.pred.baseline_model, self.X_test, self.y_test["rain_occurred"], label="RF"
         )
         assert metrics["Accuracy"] > 0.5
