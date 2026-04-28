@@ -90,17 +90,14 @@ const WeatherResults: React.FC<WeatherResultsProps> = ({ data, isComparison = fa
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                  {/* Card title + icon — inline, vertically centred */}
-                  <div className="mb-4 flex items-center gap-2">
-                    <h4 className="text-white font-semibold text-base leading-tight">
-                      {condition.description}
-                    </h4>
+                  {/* Card title — icon sits inline inside the heading so it
+                      always appears on the same line as the last word of the title */}
+                  <h4 className="mb-4 text-white font-semibold text-base leading-tight">
+                    {isGoodWeather ? 'Overall Weather' : condition.description}
                     {icon[key] && (
-                      <span className="text-base leading-none flex-shrink-0 opacity-90">
-                        {icon[key]}
-                      </span>
+                      <span className="ml-[0.75ch] opacity-90 not-italic">{icon[key]}</span>
                     )}
-                  </div>
+                  </h4>
 
                   {/* Score / probability */}
                   <div className="space-y-3">
