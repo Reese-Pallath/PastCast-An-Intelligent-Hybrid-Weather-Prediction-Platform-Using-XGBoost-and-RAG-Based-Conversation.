@@ -40,7 +40,7 @@ function isWeatherRelated(text: string): boolean {
 }
 
 const REDIRECT_TEXT =
-  "I'm your dedicated Weather AI — I only answer weather-related questions!\n\nFor general questions, translations, facts, and more, use the AI Assistant (click below).";
+  "I'm your dedicated Weather Chatbot — I only answer weather-related questions!\n\nFor general questions, translations, facts, and more, use the AI Assistant (click below).";
 
 const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
   className = '',
@@ -51,7 +51,7 @@ const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
       id: '1',
       type: 'bot',
       content:
-        "Hi! I'm your Weather AI. Ask me anything about weather — current conditions, forecasts, monsoons, climate, and more.\n\nFor general questions unrelated to weather, use the AI Assistant tab.",
+        "Hi! I'm your Weather Chatbot. Ask me anything about weather — current conditions, forecasts, monsoons, climate, and more.\n\nFor general questions unrelated to weather, use the AI Assistant tab.",
       timestamp: new Date(),
     },
   ]);
@@ -184,7 +184,7 @@ const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
             )}
           </svg>
           <span className={`hidden sm:inline transition-all duration-300 ${isOpen ? 'opacity-0' : 'opacity-100'}`}>
-            Weather AI
+            Weather Chatbot
           </span>
           {memoryCount > 0 && !isOpen && (
             <span className="absolute -top-1 -right-1 w-5 h-5 bg-purple-500 rounded-full text-xs flex items-center justify-center font-bold">
@@ -199,7 +199,7 @@ const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
             <div className="flex items-center justify-between p-4 border-b border-white/20">
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                <h3 className="text-white font-semibold">Weather AI</h3>
+                <h3 className="text-white font-semibold">Weather Chatbot</h3>
                 <span className="text-xs text-blue-300 bg-blue-500/20 px-2 py-0.5 rounded-full">
                   Weather Only
                 </span>

@@ -59,12 +59,12 @@ const WeatherResults: React.FC<WeatherResultsProps> = ({ data, isComparison = fa
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                 {/* Card title + icon */}
-                <div className="mb-4 flex items-center justify-between">
+                <div className="mb-4 flex items-start justify-between">
                   <h4 className="text-white font-semibold text-base leading-tight">
                     {condition.description}
                   </h4>
                   {icon[key] && (
-                    <span className="text-2xl text-white/90 ml-2 flex-shrink-0">
+                    <span className="text-xl text-white/90 ml-2 flex-shrink-0 leading-none mt-0.5">
                       {icon[key]}
                     </span>
                   )}
