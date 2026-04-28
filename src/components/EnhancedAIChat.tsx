@@ -138,37 +138,31 @@ const EnhancedAIChat: React.FC<EnhancedAIChatProps> = ({
       <div className="relative flex flex-col h-full bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 shadow-2xl">
 
         {/* Header */}
-        <div className="p-6 border-b border-white/10 flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center">
+        <div className="p-4 sm:p-6 border-b border-white/10 flex items-center justify-between gap-2 min-w-0">
+          <div className="flex items-center space-x-3 min-w-0 flex-1">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 shrink-0 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center">
               <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
               </svg>
             </div>
-
-            <div>
-              <h3 className="text-2xl font-bold text-white bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+            <div className="min-w-0">
+              <h3 className="text-lg sm:text-2xl font-bold text-white bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent truncate">
                 AI Assistant
               </h3>
-              <p className="text-white/70 text-sm font-medium">{location}</p>
+              <p className="text-white/70 text-xs sm:text-sm font-medium truncate">{location}</p>
             </div>
           </div>
 
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2 shrink-0">
             {/* Memory indicator */}
             {memoryStatus && (
               <button
                 onClick={() => setShowMemory(!showMemory)}
-                className="flex items-center space-x-2 bg-white/5 rounded-full px-3 py-1.5 border border-white/10 hover:bg-white/10 transition-colors cursor-pointer"
+                className="flex items-center space-x-1 bg-white/5 rounded-full px-2 py-1.5 border border-white/10 hover:bg-white/10 transition-colors cursor-pointer"
                 title="Memory Status"
               >
-                <div className={`w-2 h-2 rounded-full ${memoryStatus.lstm_active ? 'bg-purple-400 animate-pulse' : 'bg-gray-400'}`}></div>
-                <span className="text-white/70 text-xs font-medium">
+                <div className={`w-2 h-2 rounded-full shrink-0 ${memoryStatus.lstm_active ? 'bg-purple-400 animate-pulse' : 'bg-gray-400'}`}></div>
+                <span className="text-white/70 text-xs font-medium hidden sm:inline">
                   {memoryStatus.message_count} msgs
                 </span>
                 {memoryStatus.rag_used && (
@@ -178,15 +172,15 @@ const EnhancedAIChat: React.FC<EnhancedAIChatProps> = ({
             )}
 
             {/* Online status */}
-            <div className="flex items-center space-x-2 bg-white/5 rounded-full px-4 py-2 border border-white/10">
-              <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-green-400 text-sm font-medium">Online</span>
+            <div className="flex items-center space-x-1.5 bg-white/5 rounded-full px-2.5 sm:px-4 py-1.5 sm:py-2 border border-white/10">
+              <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse shrink-0"></div>
+              <span className="text-green-400 text-xs sm:text-sm font-medium">Online</span>
             </div>
 
             {/* New Session button */}
             <button
               onClick={handleNewSession}
-              className="px-3 py-2 bg-white/5 border border-white/10 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-all text-sm"
+              className="p-2 bg-white/5 border border-white/10 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-all"
               title="Start New Session"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -249,21 +243,21 @@ const EnhancedAIChat: React.FC<EnhancedAIChatProps> = ({
         </div>
 
         {/* Input */}
-        <div className="p-6 border-t border-white/10">
-          <div className="flex space-x-3">
+        <div className="p-3 sm:p-6 border-t border-white/10">
+          <div className="flex gap-2">
             <input
               type="text"
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Ask me anything... (I remember our conversation)"
+              placeholder="Ask me anything..."
               disabled={isLoading}
-              className="flex-1 px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 disabled:opacity-50"
+              className="flex-1 min-w-0 px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 disabled:opacity-50 text-sm sm:text-base"
             />
             <button
               onClick={handleSendMessage}
               disabled={!inputText.trim() || isLoading}
-              className="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 disabled:from-blue-500/40 disabled:to-cyan-500/40 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/25"
+              className="shrink-0 px-4 sm:px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 disabled:from-blue-500/40 disabled:to-cyan-500/40 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-blue-500/25 text-sm sm:text-base"
             >
               {isLoading ? '...' : 'Send'}
             </button>

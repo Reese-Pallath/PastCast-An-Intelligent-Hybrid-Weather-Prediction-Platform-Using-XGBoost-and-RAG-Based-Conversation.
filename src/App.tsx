@@ -455,7 +455,7 @@ function App() {
         )}
 
         {activeTab === 'chat' && (
-          <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 shadow-xl hover:shadow-blue-500/10 transition-all duration-300 relative overflow-hidden group scroll-animate fade-in-up">
+          <div className="bg-white/5 backdrop-blur-md rounded-2xl p-2 sm:p-8 border border-white/10 shadow-xl hover:shadow-blue-500/10 transition-all duration-300 relative overflow-hidden group scroll-animate fade-in-up">
             <div className="relative z-10">
             <EnhancedAIChat />
             </div>
