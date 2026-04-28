@@ -294,68 +294,68 @@ function App() {
 
       <main className="container mx-auto px-4 py-4 relative z-10">
                     {}
-        <div className="flex justify-center mb-4">
-                        <div className="bg-white/5 backdrop-blur-md rounded-2xl p-2 border border-white/10 shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
-                            <div className="flex space-x-1">
+        <div className="flex justify-center mb-4 px-1">
+          <div className="bg-white/5 backdrop-blur-md rounded-2xl p-2 border border-white/10 shadow-xl hover:shadow-blue-500/10 transition-all duration-300 w-full sm:w-auto">
+            <div className="grid grid-cols-2 sm:flex sm:space-x-1 gap-1 sm:gap-0">
             <button
               onClick={() => setActiveTab('weather')}
-                                    className={`px-6 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 relative overflow-hidden group button-interactive ${
+              className={`px-3 sm:px-6 py-2 sm:py-3 text-sm sm:text-base rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 relative overflow-hidden group button-interactive ${
                 activeTab === 'weather'
-                                            ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold shadow-lg shadow-blue-500/25 professional-pulse'
-                                            : 'text-white/80 hover:text-white hover:bg-white/10 hover:shadow-md hover:shadow-blue-500/20'
-                                    } ${showWeatherHighlight ? 'ring-4 ring-blue-400/50 ring-opacity-75 animate-pulse' : ''}`}
-                                >
-                                    <div className="flex items-center space-x-2 relative z-10">
-                                        <svg className="w-5 h-5 group-hover:rotate-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                                        </svg>
-                                        <span className="group-hover:tracking-wide transition-all duration-300">Weather Forecast</span>
-                                    </div>
-                                </button>
-              <button
-                onClick={() => setActiveTab('global')}
-                className={`px-6 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 relative overflow-hidden group button-interactive ${
-                  activeTab === 'global'
-                    ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold shadow-lg shadow-blue-500/25 professional-pulse'
-                    : 'text-white/80 hover:text-white hover:bg-white/10 hover:shadow-md hover:shadow-blue-500/20'
-                }`}
-              >
-                <div className="flex items-center space-x-2 relative z-10">
-                  <svg className="w-5 h-5 group-hover:rotate-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span className="group-hover:tracking-wide transition-all duration-300">Global Weather</span>
-                </div>
+                  ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold shadow-lg shadow-blue-500/25 professional-pulse'
+                  : 'text-white/80 hover:text-white hover:bg-white/10 hover:shadow-md hover:shadow-blue-500/20'
+              } ${showWeatherHighlight ? 'ring-4 ring-blue-400/50 ring-opacity-75 animate-pulse' : ''}`}
+            >
+              <div className="flex items-center justify-center space-x-2 relative z-10">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 group-hover:rotate-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                </svg>
+                <span className="group-hover:tracking-wide transition-all duration-300 leading-tight">Weather Forecast</span>
+              </div>
+            </button>
+            <button
+              onClick={() => setActiveTab('global')}
+              className={`px-3 sm:px-6 py-2 sm:py-3 text-sm sm:text-base rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 relative overflow-hidden group button-interactive ${
+                activeTab === 'global'
+                  ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold shadow-lg shadow-blue-500/25 professional-pulse'
+                  : 'text-white/80 hover:text-white hover:bg-white/10 hover:shadow-md hover:shadow-blue-500/20'
+              }`}
+            >
+              <div className="flex items-center justify-center space-x-2 relative z-10">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 group-hover:rotate-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="group-hover:tracking-wide transition-all duration-300 leading-tight">Global Weather</span>
+              </div>
             </button>
             <button
               onClick={() => setActiveTab('comparison')}
-                className={`px-6 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 relative overflow-hidden group button-interactive ${
+              className={`px-3 sm:px-6 py-2 sm:py-3 text-sm sm:text-base rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 relative overflow-hidden group button-interactive ${
                 activeTab === 'comparison'
-                    ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold shadow-lg shadow-blue-500/25 professional-pulse'
-                    : 'text-white/80 hover:text-white hover:bg-white/10 hover:shadow-md hover:shadow-blue-500/20'
-                }`}
-              >
-                <div className="flex items-center space-x-2 relative z-10">
-                  <svg className="w-5 h-5 group-hover:rotate-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                  <span className="group-hover:tracking-wide transition-all duration-300">Compare Locations</span>
-                </div>
+                  ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold shadow-lg shadow-blue-500/25 professional-pulse'
+                  : 'text-white/80 hover:text-white hover:bg-white/10 hover:shadow-md hover:shadow-blue-500/20'
+              }`}
+            >
+              <div className="flex items-center justify-center space-x-2 relative z-10">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 group-hover:rotate-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+                <span className="group-hover:tracking-wide transition-all duration-300 leading-tight">Compare Locations</span>
+              </div>
             </button>
             <button
               onClick={() => setActiveTab('chat')}
-                className={`px-6 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 relative overflow-hidden group button-interactive ${
+              className={`px-3 sm:px-6 py-2 sm:py-3 text-sm sm:text-base rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 relative overflow-hidden group button-interactive ${
                 activeTab === 'chat'
-                    ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold shadow-lg shadow-blue-500/25 professional-pulse'
-                    : 'text-white/80 hover:text-white hover:bg-white/10 hover:shadow-md hover:shadow-blue-500/20'
-                }`}
-              >
-                <div className="flex items-center space-x-2 relative z-10">
-                  <svg className="w-5 h-5 group-hover:rotate-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                  </svg>
-                  <span className="group-hover:tracking-wide transition-all duration-300">AI Assistant</span>
-                </div>
+                  ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold shadow-lg shadow-blue-500/25 professional-pulse'
+                  : 'text-white/80 hover:text-white hover:bg-white/10 hover:shadow-md hover:shadow-blue-500/20'
+              }`}
+            >
+              <div className="flex items-center justify-center space-x-2 relative z-10">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 group-hover:rotate-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+                <span className="group-hover:tracking-wide transition-all duration-300 leading-tight">AI Assistant</span>
+              </div>
             </button>
             </div>
           </div>
