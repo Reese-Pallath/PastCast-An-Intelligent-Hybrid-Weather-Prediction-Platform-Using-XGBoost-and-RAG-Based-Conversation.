@@ -1,5 +1,12 @@
 import React from 'react';
 import { WeatherData } from '../types/weather';
+import {
+  calculateWeatherScore,
+  getWeatherLabel,
+  getScoreColors,
+  parseTempFromThreshold,
+  parseWindFromThreshold,
+} from '../utils/weatherScore';
 
 export interface WeatherResultsProps {
   data: WeatherData;
@@ -42,68 +49,104 @@ const WeatherResults: React.FC<WeatherResultsProps> = ({ data, isComparison = fa
           </div>
         </div>
 
-      {}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-        {conditions.map(([key, condition], index) => {
-          if ('label' in condition) {
-            const icon: Record<string, string> = {
-              rain: '🌧️', cloudy: '☁️', extreme_heat: '☀️',
-              high_wind: '💨', good_weather: '✅',
-            };
-            return (
-              <div
-                key={key}
-                className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 shadow-lg hover:shadow-blue-500/10 transition-all duration-300 transform hover:scale-105 animate-in fade-in-50 relative overflow-hidden group"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      {/* Compute the frontend weather score once, using the raw data already in the response */}
+      {(() => {
+        const frontendScore = calculateWeatherScore({
+          cloudCover:  probabilities.cloudy.probability        ?? 50,
+          rainChance:  probabilities.rain.probability          ?? 50,
+          temperature: parseTempFromThreshold(probabilities.extreme_heat.threshold),
+          windSpeed:   parseWindFromThreshold(probabilities.high_wind.threshold),
+        });
+        const frontendLabel  = getWeatherLabel(frontendScore);
+        const frontendColors = getScoreColors(frontendLabel);
 
-                {/* Card title + icon — icon sits inline beside the title, vertically centred */}
-                <div className="mb-4 flex items-center gap-2">
-                  <h4 className="text-white font-semibold text-base leading-tight">
-                    {condition.description}
-                  </h4>
-                  {icon[key] && (
-                    <span className="text-base leading-none flex-shrink-0 opacity-90">
-                      {icon[key]}
-                    </span>
-                  )}
-                </div>
+        const icon: Record<string, string> = {
+          rain: '🌧️', cloudy: '☁️', extreme_heat: '☀️',
+          high_wind: '💨', good_weather: '✅',
+        };
 
-                {/* Probability + bar + explanation */}
-                <div className="space-y-3">
-                  {condition.probability === null ? (
-                    <div className="text-white/70 text-sm italic">No data available</div>
-                  ) : (
-                    <>
-                      <div className="text-3xl font-bold text-white bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                        {condition.probability.toFixed(1)}%
-                      </div>
-                      <div className="w-full bg-white/10 rounded-full h-2">
-                        <div
-                          className="bg-gradient-to-r from-blue-500 to-cyan-500 h-2 rounded-full transition-all duration-700 shadow-lg shadow-blue-500/25"
-                          style={{ width: `${Math.min(100, Math.max(0, condition.probability))}%` }}
-                        ></div>
-                      </div>
-                      <div className="pt-1 border-t border-white/5">
-                        <span className="text-white/60 text-xs font-semibold uppercase tracking-wider">
-                          {condition.label}
-                        </span>
-                        {condition.threshold && (
-                          <p className="text-white/50 text-xs mt-1 leading-relaxed">
-                            {condition.threshold}
-                          </p>
-                        )}
-                      </div>
-                    </>
-                  )}
+        return (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {conditions.map(([key, condition], index) => {
+              if (!('label' in condition)) return null;
+
+              const isGoodWeather = key === 'good_weather';
+
+              // Good-weather card uses the frontend-computed score + colour
+              const displayScore  = isGoodWeather ? frontendScore : condition.probability;
+              const displayLabel  = isGoodWeather ? frontendLabel : condition.label;
+              const barGradient   = isGoodWeather
+                ? `bg-gradient-to-r ${frontendColors.bar}`
+                : 'bg-gradient-to-r from-blue-500 to-cyan-500';
+              const textGradient  = isGoodWeather
+                ? `bg-gradient-to-r ${frontendColors.text}`
+                : 'bg-gradient-to-r from-blue-400 to-cyan-400';
+
+              return (
+                <div
+                  key={key}
+                  className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 shadow-lg hover:shadow-blue-500/10 transition-all duration-300 transform hover:scale-105 animate-in fade-in-50 relative overflow-hidden group"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                  {/* Card title + icon — inline, vertically centred */}
+                  <div className="mb-4 flex items-center gap-2">
+                    <h4 className="text-white font-semibold text-base leading-tight">
+                      {condition.description}
+                    </h4>
+                    {icon[key] && (
+                      <span className="text-base leading-none flex-shrink-0 opacity-90">
+                        {icon[key]}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Score / probability */}
+                  <div className="space-y-3">
+                    {displayScore === null ? (
+                      <div className="text-white/70 text-sm italic">No data available</div>
+                    ) : (
+                      <>
+                        <div className={`text-3xl font-bold text-transparent bg-clip-text ${textGradient}`}>
+                          {displayScore.toFixed(1)}%
+                        </div>
+
+                        {/* Progress bar */}
+                        <div className="w-full bg-white/10 rounded-full h-2">
+                          <div
+                            className={`${barGradient} h-2 rounded-full transition-all duration-700 shadow-lg`}
+                            style={{ width: `${Math.min(100, Math.max(0, displayScore))}%` }}
+                          />
+                        </div>
+
+                        {/* Label + explanation */}
+                        <div className="pt-1 border-t border-white/5">
+                          {isGoodWeather ? (
+                            <span className={`inline-block text-xs font-semibold px-2 py-0.5 rounded-full ${frontendColors.badge}`}>
+                              {displayLabel}
+                            </span>
+                          ) : (
+                            <span className="text-white/60 text-xs font-semibold uppercase tracking-wider">
+                              {displayLabel}
+                            </span>
+                          )}
+                          {condition.threshold && (
+                            <p className="text-white/50 text-xs mt-1 leading-relaxed">
+                              {condition.threshold}
+                            </p>
+                          )}
+                        </div>
+                      </>
+                    )}
+                  </div>
                 </div>
-              </div>
-            );
-          }
-          return null;
-        })}
-      </div>
+              );
+            })}
+          </div>
+        );
+      })()}
+
 
       {}
       {ai_insights && !isComparison && (
