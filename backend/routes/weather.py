@@ -189,17 +189,39 @@ def _cloud_index(cloud_pct: float) -> float:
 
 
 def _good_score(rain: float, temp_max: float, wind_kmh: float, cloud_pct: float) -> float:
-    """Overall pleasantness score derived analytically from the 4 conditions."""
-    discomfort = _heat_discomfort(temp_max)
-    wind       = _wind_intensity(wind_kmh)
-    cloud      = _cloud_index(cloud_pct)
+    """
+    Overall weather pleasantness score (0–100).
+
+    Each factor is normalised to [0, 1] then combined as a weighted sum.
+    Rain and cloud are NEGATIVE contributors — their values are inverted so
+    that higher coverage means a lower score.
+
+    Weights:  rain 35% | cloud 25% | temperature comfort 25% | wind calmness 15%
+    """
+    # Negative factors: high value = bad weather → invert
+    rain_score  = 1.0 - (rain / 100.0)       # 0 % rain → 1.0 ; 100 % rain → 0.0
+    cloud_score = 1.0 - (cloud_pct / 100.0)  # clear sky → 1.0 ; fully overcast → 0.0
+
+    # Temperature comfort: 18–28 °C is ideal (score = 1.0)
+    if 18.0 <= temp_max <= 28.0:
+        temp_score = 1.0
+    elif temp_max < 18.0:
+        # Cold penalty: drops linearly to 0 at −0 °C
+        temp_score = max(0.0, 1.0 - (18.0 - temp_max) / 18.0)
+    else:
+        # Heat penalty: drops linearly to 0 at 48 °C
+        temp_score = max(0.0, 1.0 - (temp_max - 28.0) / 20.0)
+
+    # Wind calmness: ≤15 km/h is ideal (score = 1.0), reaches 0 at 75 km/h+
+    wind_score = max(0.0, 1.0 - max(0.0, wind_kmh - 15.0) / 60.0)
+
     score = (
-        (1 - rain       / 100)
-        * (1 - discomfort / 100)
-        * (1 - wind       / 100)
-        * (1 - cloud      / 200)   # softer cloud penalty
-        * 100
-    )
+        rain_score  * 0.35
+        + cloud_score * 0.25
+        + temp_score  * 0.25
+        + wind_score  * 0.15
+    ) * 100.0
+
     return round(max(0.0, min(100.0, score)), 1)
 
 
@@ -365,7 +387,7 @@ def weather_probability():
                         "date_range":   f"{start_date} to {end_date}",
                         "location":     city_name,
                         "risk_level":   risk,
-                        "data_quality": "Excellent",
+                        "data_quality": good_lbl,
                     },
                 },
                 "data_sources": [

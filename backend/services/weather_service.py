@@ -132,41 +132,53 @@ def rain_label(probability: float) -> str:
 
 # ── Weather Suitability Index ───────────────────────────────────
 
+def classify_weather_score(score: float) -> str:
+    """Map a 0–100 weather pleasantness score to a human-readable label."""
+    if score >= 75:
+        return "Excellent"
+    elif score >= 55:
+        return "Good"
+    elif score >= 35:
+        return "Moderate"
+    else:
+        return "Poor"
+
+
 def compute_wsi(temp: float, rain_prob: float, wind_speed: float, cloud_coverage: float) -> tuple:
     """
-    Compute Weather Suitability Index.
+    Compute Weather Suitability Index (0–100) and a quality label.
+
+    Uses the same weighted additive formula as _good_score so that the
+    numeric score and its label are always consistent.
+
+    Weights:  rain 35% | cloud 25% | temperature comfort 25% | wind calmness 15%
 
     Returns (wsi_percent, wsi_label).
     """
-    heat_risk = max(0.0, min(1.0, (temp - 25) / 15.0))
-    wind_risk = max(0.0, min(1.0, (wind_speed - 20) / 200.0))
-    rain_factor = rain_prob / 100.0
-    clear_sky = (100.0 - cloud_coverage) / 100.0
+    # Rain and cloud are NEGATIVE factors — invert so high = bad
+    rain_score  = 1.0 - (rain_prob / 100.0)
+    cloud_score = 1.0 - (cloud_coverage / 100.0)
 
-    score = (
-        (1 - heat_risk) * 0.3
-        + (1 - rain_factor) * 0.3
-        + (1 - wind_risk) * 0.2
-        + clear_sky * 0.2
-    )
-    wsi = max(0.0, min(100.0, score * 100))
-
-    # Heat penalty
-    if temp >= 38:
-        wsi *= 0.4
-    elif temp >= 33:
-        wsi *= 0.7
-
-    if wsi >= 80:
-        label = "Excellent"
-    elif wsi >= 60:
-        label = "Good"
-    elif wsi >= 40:
-        label = "Fair"
+    # Temperature comfort: 18–28 °C ideal (score = 1.0)
+    if 18.0 <= temp <= 28.0:
+        temp_score = 1.0
+    elif temp < 18.0:
+        temp_score = max(0.0, 1.0 - (18.0 - temp) / 18.0)
     else:
-        label = "Poor"
+        temp_score = max(0.0, 1.0 - (temp - 28.0) / 20.0)
 
-    return round(wsi, 2), label
+    # Wind calmness: ≤15 km/h ideal, reaches 0 at 75 km/h+
+    wind_score = max(0.0, 1.0 - max(0.0, wind_speed - 15.0) / 60.0)
+
+    wsi = (
+        rain_score  * 0.35
+        + cloud_score * 0.25
+        + temp_score  * 0.25
+        + wind_score  * 0.15
+    ) * 100.0
+
+    wsi = round(max(0.0, min(100.0, wsi)), 2)
+    return wsi, classify_weather_score(wsi)
 
 
 # ── Seasonal fallback ──────────────────────────────────────────
